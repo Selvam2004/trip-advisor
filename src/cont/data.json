@@ -1,0 +1,155 @@
+[
+    { 
+   "head":[
+       "Ooty-",
+       "Queen of Hills",
+       "https://static.vecteezy.com/system/resources/previews/025/123/742/non_2x/green-tea-crop-grows-in-tranquil-cameron-highlands-landscape-at-dawn-generated-by-ai-free-photo.jpg"
+   ],
+    "content":[
+        {
+          "place": "Doddabetta Peak",
+          "imagesrc": "https://www.goldentriangletour.com/userfiles/Doddabeta-DSC_169423.jpg",
+          "discription": "Doddabetta is the highest mountain in the Nilgiri Mountains at 2,637 metres. There is a reserved forest area around the peak. It is 9 km from Ooty, on the Ooty-Kotagiri Road in the Nilgiris District of Tamil Nadu, India. It is a popular tourist attraction with road access to the summit.",
+          "time": "7:00 am - 6:00 pm",
+          "fee": "Rs.10 per head.",
+          "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3294.880954541596!2d76.73644949999999!3d11.40175665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba895ff9e0d4e43%3A0xacfac1b7b6dde179!2sDoddabetta%20Peak!5e1!3m2!1sen!2sin!4v1681570735822!5m2!1sen!2sin"
+        },
+        {
+          "place": "Pykara waterfalls",
+          "imagesrc": "https://cdn.xafari.in/poi-images/poi-images-1634808223771.jpg",
+          "discription":"Pykara River and the waterfalls the river produces is one of the most beautiful and majestic sights that you will get to see in Ooty. Located 20 kms away from Ooty in the Ooty-Mysore road, the Pykara lake has been developed into a thoroughly enjoyable picnic spot by the addition of a boat house and restaurant. ",
+          "time": "8:30 am - 5:00 pm",
+          "fee": "Rs.175 per person for Boating.",
+          "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3294.034849316664!2d76.6028773!3d11.474485600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8a3b05918eef7%3A0xe19d4ee3d1e2a9ec!2sPykara%20Waterfalls!5e1!3m2!1sen!2sin!4v1681570648639!5m2!1sen!2sin"
+        },
+        {
+          "place": "Government Botanical Garden",
+          "imagesrc": "https://www.holidify.com/images/cmsuploads/compressed/2913_20190415141234.jpg",
+          "discription": "They are the Lower Garden, which has the fern house that harbors one hundred and twenty seven species of ferns. the New Garden, which contains the rose garden, a lot of natural floral carpets and natural ponds.The Flower show held as a part of the Summer Festival in Ooty is a must see if you happen to visit Ooty during that time.",
+          "time": "7:00 am - 6:30 pm",
+          "fee": "Rs.30 per head.",
+          "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3294.739272892492!2d76.7067927!3d11.413967099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd1d186162ed%3A0xb64813547d1f38aa!2sBotanical%20Garden%20Ooty!5e1!3m2!1sen!2sin!4v1681570487015!5m2!1sen!2sin"
+        }
+      ],
+      
+        "hospitality":[
+        {
+          "place": "Sanhita Hospital",
+          "imagesrc": "https://lh5.googleusercontent.com/p/AF1QipOpFU7lET2qEZs9aNp8fiwgZ9uFPi-OoB5nP9cF=w408-h544-k-no",
+          "address": "Dasaprakash Rd, Bishop Down, Fern Hill, Ooty, Tamil Nadu 643001.",
+          "opening": "9 AM - 9 PM",
+          "number": "04232443671",
+          "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359.02110628768!2d76.69068885!3d11.402042600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba89628efc8b1c9%3A0x518d1507be73b556!2sSanhita%20Hospital!5e1!3m2!1sen!2sin!4v1681757381168!5m2!1sen!2sin"
+        },
+        {
+          "place": "nilgiris medical college and hospital",
+          "imagesrc": "https://images.i3c.tech/2023/07/05/94a1bcdb88be4a809d4c5f009eef340b.jpg",
+          "address": "CMCC+H69, Indunagar, Ooty, Tamil Nadu 643006.",
+          "opening": "open 24 hours",
+          "number": "0423-2442712",
+          "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20149.298347576827!2d76.66719013919561!3d11.41528077666156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bdacbb3749d9%3A0x80efaaa266afe9e5!2snilgiris%20medical%20college%20and%20hospital!5e1!3m2!1sen!2sin!4v1681757558361!5m2!1sen!2sin"
+        },
+        {
+          "place": "BS Hospital Ooty",
+          "imagesrc": "https://www.cipaca.com/images/hospital.jpg",
+          "address": "190, Ettines Rd, Race Course, Ooty, Tamil Nadu 643001.",
+          "opening": "open 24 hours",
+          "number": "09787211000",
+          "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65745.13782389107!2d76.64088151939708!3d11.43405445651602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8970313589939%3A0x8bddb3aff606f42e!2sBS%20Hospital%20Ooty!5e1!3m2!1sen!2sin!4v1681757644560!5m2!1sen!2sin"
+        }
+      ],
+      "images":[
+        "https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b290eSUyQyUyMGluZGlhfGVufDB8fDB8fHww",
+        "https://wallpapercave.com/wp/wp3495633.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGSmnaBYMWGTOQ4ZVvTZKxev1bLaDmw4Qcu4yo8MUHdpYee5KOVULJ6hGlIOLsGv3wfk&usqp=CAU",
+        "https://images.pexels.com/photos/8465212/pexels-photo-8465212.jpeg?cs=srgb&dl=pexels-akhil-8465212.jpg&fm=jpg",
+        "https://images.pexels.com/photos/18521767/pexels-photo-18521767.jpeg?cs=srgb&dl=pexels-karthick-gislen-18521767.jpg&fm=jpg",
+        "https://media.istockphoto.com/id/1152476055/photo/ooty-tamil-nadu.jpg?s=612x612&w=0&k=20&c=V5zSmJ8nhaWs_3JWwBEq0z7Oh7w-mdD80mxPSZTEmck=",
+        "https://cdn.pixabay.com/photo/2018/10/28/18/41/ooty-3779552_1280.jpg",
+        "https://images.unsplash.com/photo-1563524731987-f6d09bbfca2a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b290eSUyQyUyMGluZGlhfGVufDB8fDB8fHww",
+        "https://www.shutterstock.com/image-photo/beauty-dolphin-nose-ooty-600nw-2326912277.jpg"
+      ],
+      "about":[
+        "https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b290eSUyQyUyMGluZGlhfGVufDB8fDB8fHww",
+        "Ooty is a scenic hill town in southern India. It is surrounded by the Nilgiri Hills and is popularly known as the Queen of Hills. Climate is the only serious deterrent which might spoil your travel plans to Ooty. But regarding climate too, Ooty has something different to offer all throughout the year. The summer is perhaps the best time to visit the place, if you are planning to visit all the tourist spots, including some adventurous treks and hand gliding. With plenty of parks, museums and lakes around, you will need ample time to soak in the views. So, if you want to enjoy a leisure holiday in Ooty, you will have to set aside 3-4 days."
+      ]
+      
+    },
+    { 
+      "head":[
+          "Valparai-",
+          "The seventh Heaven",
+          "https://4.bp.blogspot.com/-VG8utHEg-q4/V5OHNcgtsJI/AAAAAAAAApQ/cXM4KPKxZAgosT_3Zm9K_noUIi31norpwCLcB/s1600/valpara2.jpg"
+      ],
+       "content":[
+           
+           {
+             "place": "Aliyar Dam",
+             "imagesrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Aliyar-Dam.JPG/2560px-Aliyar-Dam.JPG",
+             "discription":" Aliyar Dam is a charming location surrounded by Annamali Hills with wonderful natural views. It is located between Pollachi and Valparai. At a distance of 64 Kms from Coimbatore, 24 Kms from Pollachi & 545 Kms from Chennai.Built across Aliyar River between 1959 and 1969,the primary purpose of the dam is to support irrigation for Pollachi and near by places for Agriculture purpose.",
+             "time": "9:00AM - 5:00PM",
+             "fee": "Rs.10 per head.",
+             "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29180.019802435978!2d76.95663178660276!3d10.471943888153659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba825baecb6f2db%3A0x1629fb79e8f1bb74!2sAliyar%20Dam!5e1!3m2!1sen!2sin!4v1681499466787!5m2!1sen!2sin"
+           },
+           {
+             "place": "Balaji Temple",
+             "imagesrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/3a/a2/2a/balaji-temple.jpg?w=1200&h=-1&s=1",
+             "discription": "At a distance of 10 km from Valparai Bus Station, Balaji Temple is one of the prominent temples located in Valparai, Tamilnadu.Situated inside Karumalai Tea Estate, it is one of the beautiful and the most visited Valparai tourist places.As vehicles are not allowed after the entrance, one has to walk 500 meters uphill slope",
+             "time": "6.30 AM - 12 PM & 3 PM - 7 PM",
+             "fee": "Free Entry.",
+             "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.115143223084!2d76.9985416746904!3d10.333990689789145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0788120a8810bb%3A0x8b323950d8c0adb2!2sBalaji%20Temple%20(Inside%20Karumalai%20Estate)!5e1!3m2!1sen!2sin!4v1681549045217!5m2!1sen!2sin"
+           },
+           {
+             "place": "Sholayar Dam",
+             "imagesrc": "https://www.keralatourism.org/images/picture/large/Sholayar_Dam_Sholayar_2020.jpg",
+             "discription": "Solaiyar Dam was officially opened in 1965. The height of the main dam is 66 m, its width is 430 m, and its length 430.60 m. The surroundings of the dam are full of great natural beauty. The surroundings of the dam are full of great natural beauty. At a distance of 23 km from Valparai, and 55 km from Athirapally, Sholayar Dam is a masonry- gravity dam situated on Valparai-Athirapally road",
+             "time": "8 AM - 5 PM",
+             "fee": "Free Entry.",
+             "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d306203.7161572507!2d76.87165634270906!3d10.334205544148306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b078a5700000001%3A0x539724e9f041f58e!2sSholayar%20Dam%20Cottages!5e1!3m2!1sen!2sin!4v1681550079517!5m2!1sen!2sin"
+           }
+         ],
+         
+           "hospitality":[
+           {
+             "place": "Government Hospital Valparai",
+             "imagesrc": "https://www.nammakovai.org/web/documentimg/hospitalrequest.jpeg",
+             "address": "Kumaran Road, Valparai ,Tamil Nadu- 642 127.",
+             "opening": "open 24 hours",
+             "number": "04253222533",
+             "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105822.64113390277!2d76.93995905972419!3d10.30864886323009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0789c9fcd24ff7%3A0xee0c0f0f50f2a96d!2sGovernment%20Hospital%20Valparai!5e1!3m2!1sen!2sin!4v1681715538144!5m2!1sen!2sin"
+           },
+           {
+             "place": "Elite Clinic",
+             "imagesrc": "https://cdn1.goibibo.com/voy_mmt/t_g/htl-imgs/202112241316134708-8ad4d078a09611ecbbd40a58a9feac02.jpg",
+             "address": "No A/2 Anna Complex Ground Floor, S H 78, Main Road, Valparai Ho, Valparai - 642127.",
+             "opening": "9 AM - 9 PM",
+             "number": "09443912625",
+             "mapLink":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21672.86324382455!2d76.95606170762161!3d10.34924094151949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b078829ca43d6ef%3A0xcb63ab6baf8cb36e!2sElite%20Clinic!5e1!3m2!1sen!2sin!4v1681717428782!5m2!1sen!2sin"
+           },
+           {
+             "place": "Krumalai Group Central Hospital",
+             "imagesrc": "https://files.yappe.in/place/full/ktvr-group-hospital-3461271.webp",
+             "address": "Balaji Temple Rd, Tamil Nadu 642127.",
+             "opening": "open 24 hours",
+             "number": "08797211000",
+             "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130281.8621348887!2d76.85616848413326!3d10.311283259943341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b078938df21f801%3A0xc18e8fc0f292c099!2sKrumalai%20Group%20Central%20Hospital!5e1!3m2!1sen!2sin!4v1681717295928!5m2!1sen!2sin"
+           }
+         ],
+         "images":[
+           "https://images.unsplash.com/photo-1662836051897-c7f995ba9f26?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dmFscGFyYWl8ZW58MHx8MHx8fDA%3D",
+           "https://images.unsplash.com/photo-1628668482075-314e85205eaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmFscGFyYWl8ZW58MHx8MHx8fDA%3D",
+           "https://images.unsplash.com/photo-1664950961568-e1aa634afda1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmFscGFyYWl8ZW58MHx8MHx8fDA%3D",
+           "https://images.unsplash.com/photo-1662698508567-7f92ba0e1bef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmFscGFyYWklMjBhbmltYWxzfGVufDB8fDB8fHww",
+           "https://media.istockphoto.com/id/1455469928/photo/way-through-tea-estate-in-valparai-tamil-nadu-india.webp?b=1&s=170667a&w=0&k=20&c=InXIjxlwB5xcmvyZjPy-7N5qQhlIkfwSs3xpHYsfCws=",
+           "https://images.unsplash.com/photo-1686135899613-0db585a1714c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHZhbHBhcmFpfGVufDB8fDB8fHww",
+           "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0c/0f/31/53/dsc-4778-largejpg.jpg",
+           "https://c0.wallpaperflare.com/preview/154/735/777/india-valparai-nature-love.jpg",
+           "https://www.shutterstock.com/image-photo/beauty-dolphin-nose-ooty-600nw-2326912277.jpg"
+         ],
+         "about":[
+           "https://c0.wallpaperflare.com/preview/154/735/777/india-valparai-nature-love.jpg",
+           "The Valparai range is habitat to the Nilgiri tahr, an endemic wild ungulate. These mountain goats inhabit the high ranges and prefer open terrain, cliffs and grass-covered hills, a habitat largely confined to altitudes from 1200 to 2600m in the southern Western Ghats.Their territory extended far and wide all along these hills in the past, but, because of hunting and large-scale habitat destruction, they now exist only in a few isolated sites like the Anaimalai Hills.The human-elephant conflict here is a delicate issue. The tea plantations are a hindrance to the movement of wildlife, particularly elephants who walk large distances to reach water bodies and feeding areas. There will be no animals wandering around during the monsoon period (june), mostly wild boar, gaurs, and lion-tail macaques can be noticed. "
+         ]
+         
+       }
+]
