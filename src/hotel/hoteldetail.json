@@ -2,6 +2,7 @@
     {
     "img": "https://img.freepik.com/free-photo/luxury-classic-modern-bedroom-suite-hotel_105762-1787.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703894400&semt=ais",
     "title": "Heaven  Holidays",
+    "key":"ooty",
     "location": "Udhagamandalam,Ooty",
     "rating": 3.1,
     "price": 4723,
@@ -38,6 +39,7 @@
    {
     "img": "https://img.freepik.com/free-photo/room-interior-hotel-bedroom_23-2150683421.jpg",
     "title": "Anmols Peace Home stay",
+    "key":"oty",
     "location": "The Nilgiris District,Ooty",
     "rating": 3.9,
     "price": 3054,

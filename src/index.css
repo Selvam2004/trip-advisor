@@ -43,4 +43,31 @@
     font-size: 2.6rem;
     letter-spacing: 0.4rem;
   }
- 
+  input::placeholder {
+    font-weight: lighter;
+    opacity: 0.4;
+    color: rgb(54, 49, 49);
+    font-size: smaller;
+  }
+  .searchbtn{
+    padding: 5px 20px;
+    border :2px solid green;
+    border-radius: 0px 20px 20px 0px;
+    color: white;
+    background-color: green;
+    transition: all .6s linear;
+  }
+  .searchbtn:hover{
+    background-color: white;
+    color: black;
+  }
+  .searchinput{ 
+    padding:17px 20px 8px 20px;
+    border: 2px solid green;
+    border-radius: 20px 0px 0px 20px;
+  }
+  input[type="text"] {
+    height: 100%; 
+    font-size:20px;
+    font-weight:normal;
+ }

@@ -2,7 +2,7 @@ import { Routes ,Route } from "react-router-dom";
 import Signup from "./signup";
 import App from "./App";
 import First from "./cont/first";
-import AllTour from "./alltour";
+import AllTour from "./alltour/alltour";
 import Hotels from "./hotel/hotels";
 import Details from "./hotel/details";
 import HotelPayment from "./hotel/hotelpayment";

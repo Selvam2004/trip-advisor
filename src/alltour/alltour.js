@@ -1,9 +1,18 @@
- 
+import { Card, Col, Container, Row } from "react-bootstrap";
+import Data from "./tourdetails.json";
+import { useState } from "react";
+const detail=Data;
  
 
 export default function AllTour(){
+  const [details, setDetails] = useState(detail);
+  function handleClick() {
+    const search = document.getElementById("hotelsearch").value;
+    const sorted = detail.filter((detail) => detail.key === search);
+    setDetails(sorted);
+  }
     return (
-        <> 
+        <Container> 
         
         <nav className="navbar">
 
@@ -38,14 +47,42 @@ export default function AllTour(){
             </div>
           </div>
         </nav>
-        <h2 className="p-3" style={{marginLeft:"170px",marginRight:"170px",fontSize:"2.6rem",letterSpacing:"0.4rem"}}>All <span className="subtitle">Tours</span></h2>
-    <div className="section-center featured-center ">
+        <h2 className="p-3 text-center" style={{marginLeft:"170px",marginRight:"170px",fontSize:"2.6rem",letterSpacing:"0.4rem"}}>All <span className="subtitle">Tours</span></h2>
+        <h3 className="text-center mb-5">
+          <input
+            className="searchinput"
+            type="text"
+            placeholder="Enter place name to search"
+            id="hotelsearch"
+          />
+          <button className="searchbtn" onClick={handleClick} >
+            search
+          </button>
+        </h3>
+        <Row xs={1} md={3} className="g-4">
+      {details.map((dtl) => (
+        <Col>
+          <Card className="tour-card">
+            <Card.Img variant="top" className="tour-img" src={dtl.src} />
+            <Card.Body>
+              <Card.Title>{dtl.name}</Card.Title>
+              <Card.Text>
+                <div className="tour-info tour-country">
+                {dtl.location}
+                </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+    {/* <div className="section-center featured-center ">
     
           <article className="tour-card">
             <a href="Ooty.html">
               <div className="tour-img-container">
                 <a href="/ooty"><img
-                  src={require("./images/ooty.jpg")}
+                  src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
                 /></a>
@@ -114,7 +151,7 @@ export default function AllTour(){
             <a href="Ooty.html">
               <div className="tour-img-container">
                 <a href="/ooty"><img
-                  src={require("./images/ooty.jpg")}
+                  src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
                 /></a>
@@ -183,7 +220,7 @@ export default function AllTour(){
             <a href="Ooty.html">
               <div className="tour-img-container">
                 <a href="/ooty"><img
-                  src={require("./images/ooty.jpg")}
+                  src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
                 /></a>
@@ -246,7 +283,9 @@ export default function AllTour(){
             </div>
           </article>
 
-        </div>
-        </>
+        </div> */}
+
+
+        </Container>
     );
 }
