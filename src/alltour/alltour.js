@@ -63,7 +63,7 @@ export default function AllTour(){
       {details.map((dtl) => (
         <Col>
           <Card className="tour-card">
-            <Card.Img variant="top" className="tour-img" src={dtl.src} />
+            <a href={dtl.link}><Card.Img variant="top" className="tour-img" src={dtl.src} /></a>
             <Card.Body>
               <Card.Title>{dtl.name}</Card.Title>
               <Card.Text>
