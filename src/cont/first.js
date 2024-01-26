@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import "../App.css";
+import "../css/App.css";
 import Places from "./places";
 import Hospitality from "./hospitality";
 import Data from "./data.json";

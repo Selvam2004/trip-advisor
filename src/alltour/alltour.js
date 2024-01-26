@@ -59,7 +59,7 @@ export default function AllTour(){
             search
           </button>
         </h3>
-        <Row xs={1} md={3} className="g-4">
+        <Row sm={1} md={3} className="g-4">
       {details.map((dtl) => (
         <Col>
           <Card className="tour-card">

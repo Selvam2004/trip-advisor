@@ -7,16 +7,14 @@ export default function Featured(){
           </h2>
         </div>
         <div className="section-center featured-center ">
-          <article className="tour-card">
-            <a href="Ooty.html">
+          <article className="tour-card"> 
               <div className="tour-img-container">
                 <a href="/ooty"><img
-                  src={require("./images/ooty.jpg")}
+                  src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
                 /></a>
-              </div>
-            </a>
+              </div> 
             <div className="tour-footer">
               <h4 className="tour-title">Ooty - Queen Of Hills</h4>
               <div className="tour-info">

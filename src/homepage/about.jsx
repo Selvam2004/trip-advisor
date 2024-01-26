@@ -9,7 +9,7 @@ export default function About(){
         <div className="section-center about-center">
           <div className="about-img">
             <img
-              src={require("./images/about.jpeg")}
+              src={require("../images/about.jpeg")}
               className="about-photo"
               alt="awesome beach"
             />

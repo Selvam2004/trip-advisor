@@ -10,7 +10,7 @@ export default function Gallery(){
         <div className="gallery-center">
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-1.jpeg")}
+              src={require("../images/tour-1.jpeg")}
               className="gallery-img"
               alt=""
             />
@@ -20,7 +20,7 @@ export default function Gallery(){
           </div>
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-2.jpeg")}
+              src={require("../images/tour-2.jpeg")}
               className="gallery-img"
               alt=""
             />
@@ -30,7 +30,7 @@ export default function Gallery(){
           </div>
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-3.jpeg")}
+              src={require("../images/tour-3.jpeg")}
               className="gallery-img"
               alt=""
             />
@@ -40,7 +40,7 @@ export default function Gallery(){
           </div>
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-4.jpeg")}
+              src={require("../images/tour-4.jpeg")}
               className="gallery-img"
               alt=""
             />
@@ -50,7 +50,7 @@ export default function Gallery(){
           </div>
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-5.jpeg")}
+              src={require("../images/tour-5.jpeg")}
               className="gallery-img"
               alt=""
             />
@@ -60,7 +60,7 @@ export default function Gallery(){
           </div>
           <div className="gallery-img-container">
             <img
-              src={require("./images/tour-6.jpeg")}
+              src={require("../images/tour-6.jpeg")}
               className="gallery-img"
               alt=""
             />

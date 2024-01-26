@@ -120,7 +120,7 @@ a {
 @media screen and (min-width: 768px) {
   .hero {
     background: linear-gradient(rgba(63, 208, 212, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./images/main.jpeg") center/cover no-repeat;
+    url("../images/main.jpeg") center/cover no-repeat;
   }
   .hero-title {
     font-size: 4.5rem;
@@ -336,7 +336,7 @@ a {
 }
 @media screen and (min-width: 992px) {
   .gallery-img-container {
-    flex: 0 0 25%;
+    flex: 0 0 33.3%;
   }
 }
 /*************** end of gallery ***************/
