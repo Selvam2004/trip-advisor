@@ -8,9 +8,10 @@ import Hospitality from "./hospitality";
 import Data from "./data.json";
 import Galry from "./glry";
 import Abt from "./abt";
+import { useParams } from "react-router-dom";
 
 export default function First(props) {
-  const { id } = props;
+  const { id } = useParams();
   const head = Data[id].head;
   const content = Data[id].content;
   const hospitals = Data[id].hospitality;

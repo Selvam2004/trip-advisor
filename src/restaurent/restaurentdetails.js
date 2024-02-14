@@ -10,8 +10,10 @@ import {
 } from "react-bootstrap";
 import Data from "./restaurentdetail.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useParams } from "react-router-dom";
 export default function RestaurentDetails(props) {
-  const { num } = props;
+  const { id } = useParams();
+  const num=id;
   const img = Data[num].imgarr;
   return (
     <>

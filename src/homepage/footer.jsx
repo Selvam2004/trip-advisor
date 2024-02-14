@@ -14,7 +14,7 @@ export default function Footer(){
           <a href="#featured" className="footer-link scroll-link">
             featured
           </a>
-          <a href="#gallery" className="footer-link scroll-link" scroll-link>
+          <a href="#gallery" className="footer-link scroll-link" >
             gallery
           </a>
         </div>

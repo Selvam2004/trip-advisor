@@ -1,78 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 export default function Signup() {
-  let [authMode, setAuthMode] = useState("signin");
+  const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  let [name,setName] =useState();
+  let [email,setEmail] = useState();
+  let [password,setPassword] = useState(); 
 
-  const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    setErrors(validateValues({name,email,password}));
+    setSubmitting(true);
   };
-  if (authMode === "signin") {
-    return (
-      <>
-        <div className="Auth-form-container">
-          <form className="Auth-form">
-            <img alt="This will Take a while to load"
-              id="ig"
-              className="float-start"
-              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D"
-            />
+  const validateValues = (inputValues) => {
+    let errors = {};
+    const regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; 
 
-            <div className="float-end Auth-form-content">
-              <h2 className="mt-5" id="tit">
-                <b>
-                  Explore the world to Experience <br />
-                  the Beauty of Nature
-                </b>
-              </h2>{" "}
-              <br />
-              <h3 className="Auth-form-title">Sign In</h3>
-              <div className="text-center">
-                Not registered yet?{" "}
-                <span className="link-primary" onClick={changeAuthMode}>
-                  Sign Up
-                </span>
-              </div>
-              <div className="form-group mt-3">
-                <label>Email address</label>
-                <input
-                  type="email"
-                  className="form-control mt-1"
-                  placeholder="Enter email"
-                  id="email"
-                  name="email"
-                />
-              </div>
-              <div className="form-group mt-3">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control mt-1"
-                  placeholder="Enter password"
-                  id="password"
-                  name="password"
-                />
-              </div>
-              <div className="d-grid gap-2 mt-3">
-                <button type="submit" className="btn btn-primary">
-                  <a href="/home"> Submit</a>
-                </button>
-              </div>
-              <p className="text-center mt-2">
-                Forgot <span className="link-primary">password?</span>
-              </p>
-            </div>
-          </form>
-        </div>
-      </>
-    );
-  }
+    if(inputValues.name==null){
+      errors.name = "* Please enter a name";
+    }
+    else if (inputValues.name.length < 5) {
+      errors.name = "* Please enter a valid name";
+    } else if (!regEx.test(inputValues.email)) {
+      errors.email = "*Enter a valid email";
+    } else if (inputValues.password==null) {
+      errors.password = "*Please Enter a Password";
+    }
+    else if (inputValues.password.length < 5) {
+      errors.password = "*Password is too short";
+    }
+
+    return errors;
+  };
+
+  const finishSubmit = () => {
+    axios
+      .post("http://localhost:3001/register",{name,email,password})
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && submitting) {
+      finishSubmit();
+    }
+    // eslint-disable-next-line 
+  }, [errors]);
 
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
-        <img alt="This will Take a while to load"
+      <form className="Auth-form" onSubmit={handleSubmit}>
+        <img
+          alt="This will Take a while to load"
           id="ig2"
           className="float-start"
           src="https://cdn.wallpapersafari.com/28/61/6Tr9P7.jpg"
@@ -89,38 +75,44 @@ export default function Signup() {
           <br />
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center">
-            Already registered?{" "}
-            <span className="link-primary" onClick={changeAuthMode}>
-              Sign In
-            </span>
+            Already registered? <a href="/login"><span className="link-primary">Sign In</span></a>
           </div>
           <div className="form-group mt-3">
-            <label>Full Name</label>
+            <label htmlFor="name">Full Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="e.g selvam"
+              id="name"
+              onChange={e=>setName(e.target.value)}
             />
           </div>
+          <p style={{ color: "red" }}>{errors.name}</p>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
               className="form-control mt-1"
               placeholder="Email Address"
+              id="email"
+              onChange={e=>setEmail(e.target.value)}
             />
           </div>
+          <p style={{ color: "red" }}>{errors.email}</p>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label htmlFor="pwd">Password</label>
             <input
               type="password"
               className="form-control mt-1"
               placeholder="Password"
+              id="pwd"
+              onChange={e=>setPassword(e.target.value)}
             />
           </div>
+          <p style={{ color: "red" }}>{errors.password}</p>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
-              <Link to="/home">Submit</Link>
+              Submit
             </button>
           </div>
         </div>

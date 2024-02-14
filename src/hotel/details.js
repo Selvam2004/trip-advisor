@@ -12,6 +12,7 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
+import { useParams } from "react-router-dom";
 
 library.add(
   fas,
@@ -25,7 +26,8 @@ library.add(
   faIndianRupeeSign
 );
 export default function Details(props) {
-  const { num } = props;
+  const { id } = useParams();
+  const num=id;
   const img = Data[num].imgarr;
   return (
     <>

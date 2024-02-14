@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import Data from "./hoteldetail.json";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Hotel from "./hotel";
 import { useState } from "react";
 const detail = Data;
@@ -48,9 +49,24 @@ export default function Hotels() {
           style={{ fontSize: "2.4rem", letterSpacing: "0.2rem" }}
         >
           Hotels
-        </h1>
-        <h3 className="text-center">
-          <input
+        </h1> 
+          <div className="input-group mb-3">
+            <input
+              type="text"
+              className="form-control border-success"
+              placeholder="Enter place name to search"
+              id="hotelsearch" 
+            />
+            <button
+              className="btn btn-success"
+              type="button"
+              onClick={handleClick}
+            >
+              Search
+            </button>
+          </div>
+
+          {/* <input
             className="searchinput"
             type="text"
             placeholder="Enter place name to search"
@@ -61,8 +77,7 @@ export default function Hotels() {
             onClick={handleClick}
           >
             search
-          </button>
-        </h3>
+          </button> */} 
         {details.map((detail) => {
           return (
             <>

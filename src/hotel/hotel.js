@@ -77,7 +77,7 @@ export default function Hotel(props) {
                 </span>
               </h3>
               <div className="float-end ">
-                <a href={details.view}>
+                <a href={"/home/hotels/"+details.view}>
                   <button
                     className="btn-primary  mb-2"
                     style={{
@@ -89,7 +89,7 @@ export default function Hotel(props) {
                     view details
                   </button>
                 </a>
-                <a href={details.book}>
+                <a href={"/home/hotels/payment/"+details.book}>
                   <button
                     className="btn p-3 mb-2 ms-3 btn-warning"
                     style={{ letterSpacing: "0.2rem" }}

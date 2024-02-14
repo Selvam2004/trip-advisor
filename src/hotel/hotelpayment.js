@@ -12,8 +12,10 @@ import {
 import Data from "./hoteldetail.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 export default function HotelPayment(props) {
-  const { num } = props;
+  const { id } = useParams();
+  const num=id;
   return (
     <>
     <Container>

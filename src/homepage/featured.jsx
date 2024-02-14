@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Featured(){
     return (
         <section className="section featured-tours" id="featured">
@@ -9,11 +11,11 @@ export default function Featured(){
         <div className="section-center featured-center ">
           <article className="tour-card"> 
               <div className="tour-img-container">
-                <a href="/ooty"><img
+                <Link to="/home/tour/0"><img
                   src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
-                /></a>
+                /></Link>
               </div> 
             <div className="tour-footer">
               <h4 className="tour-title">Ooty - Queen Of Hills</h4>
@@ -28,7 +30,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="/valparai">
+            <a href="/home/tour/1">
               <div className="tour-img-container">
                 <img
                   src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
@@ -74,7 +76,7 @@ export default function Featured(){
 
         </div>
         <div className="tour-link">
-          <a href="/alltour" className="btn-primary">
+          <a href="/home/alltour" className="btn-primary">
             all tours
           </a>
         </div>

@@ -6,7 +6,9 @@ import Footer from "./homepage/footer.jsx";
 import Gallery from "./homepage/gallery.jsx";
 import Home from "./homepage/home.jsx";
 import Services from "./homepage/service.jsx";
+
 function App() {
+
   return (
     <>
     
@@ -16,6 +18,7 @@ function App() {
       <Featured/>
       <Gallery/>
       <Footer/>
+      
     </>
   );
 }

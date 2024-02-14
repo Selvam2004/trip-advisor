@@ -26,8 +26,8 @@
       "description": " Geyser "
      } 
      ],
-     "view":"heaven",
-     "book":"heavenPay",
+     "view":"0",
+     "book":"0",
      "imgarr":[
       "https://images.oyoroomscdn.com/uploads/hotel_image/198613/large/mtieaknnrfwi.jpg",
       "https://images.oyoroomscdn.com/uploads/hotel_image/198613/large/gospsorpbatk.jpg",
@@ -63,8 +63,8 @@
       "description": " Geyser "
      } 
      ],
-     "view":"anamols",
-     "book":"anamolsPay",
+     "view":"1",
+     "book":"1",
      "imgarr":[
       "https://images.oyoroomscdn.com/uploads/hotel_image/194740/large/5da5c859d40acc9d.jpg",
       "https://images.oyoroomscdn.com/uploads/hotel_image/194740/large/6d73ef2698b7035d.jpg",

@@ -48,244 +48,38 @@ export default function AllTour(){
           </div>
         </nav>
         <h2 className="p-3 text-center" style={{marginLeft:"170px",marginRight:"170px",fontSize:"2.6rem",letterSpacing:"0.4rem"}}>All <span className="subtitle">Tours</span></h2>
-        <h3 className="text-center mb-5">
-          <input
-            className="searchinput"
-            type="text"
-            placeholder="Enter place name to search"
-            id="hotelsearch"
-          />
-          <button className="searchbtn" onClick={handleClick} >
-            search
-          </button>
-        </h3>
+        <div className="input-group mb-3">
+            <input
+              type="text"
+              className="form-control border-success"
+              placeholder="Enter place name to search"
+              id="hotelsearch" 
+            />
+            <button
+              className="btn btn-success"
+              type="button"
+              onClick={handleClick}
+            >
+              Search
+            </button>
+        </div>
         <Row sm={1} md={3} className="g-4">
-      {details.map((dtl) => (
-        <Col>
-          <Card className="tour-card">
-            <a href={dtl.link}><Card.Img variant="top" className="tour-img" src={dtl.src} /></a>
+      {details.map((dtl,i) => (
+        <Col key={i}>
+          <Card className="tour-card" >
+            <a href={"/home/tour/"+dtl.link}><Card.Img variant="top" className="tour-img" src={dtl.src} /></a>
             <Card.Body>
               <Card.Title>{dtl.name}</Card.Title>
               <Card.Text>
-                <div className="tour-info tour-country">
+                <span className="tour-info tour-country">
                 {dtl.location}
-                </div>
+                </span>
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
       ))}
-    </Row>
-    {/* <div className="section-center featured-center ">
-    
-          <article className="tour-card">
-            <a href="Ooty.html">
-              <div className="tour-img-container">
-                <a href="/ooty"><img
-                  src={require("../images/ooty.jpg")}
-                  className="tour-img"
-                  alt=""
-                /></a>
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Ooty - Queen Of Hills</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="/valparai">
-              <div className="tour-img-container">
-                <img
-                  src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Valparai-Seventh Heaven</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="valparai.html">
-              <div className="tour-img-container">
-                <img
-                  src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Kodaikanal</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Dindigul,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-    <div className="section-center featured-center ">
-          <article className="tour-card">
-            <a href="Ooty.html">
-              <div className="tour-img-container">
-                <a href="/ooty"><img
-                  src={require("../images/ooty.jpg")}
-                  className="tour-img"
-                  alt=""
-                /></a>
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Ooty - Queen Of Hills</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="/valparai">
-              <div className="tour-img-container">
-                <img
-                  src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Valparai-Seventh Heaven</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="valparai.html">
-              <div className="tour-img-container">
-                <img
-                  src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Kodaikanal</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Dindigul,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-    <div className="section-center featured-center ">
-          <article className="tour-card">
-            <a href="Ooty.html">
-              <div className="tour-img-container">
-                <a href="/ooty"><img
-                  src={require("../images/ooty.jpg")}
-                  className="tour-img"
-                  alt=""
-                /></a>
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Ooty - Queen Of Hills</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="/valparai">
-              <div className="tour-img-container">
-                <img
-                  src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Valparai-Seventh Heaven</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Coimbatore,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article className="tour-card">
-            <a href="valparai.html">
-              <div className="tour-img-container">
-                <img
-                  src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"
-                  className="tour-img"
-                  alt=""
-                />
-              </div>
-            </a>
-            <div className="tour-footer">
-              <h4 className="tour-title">Kodaikanal</h4>
-              <div className="tour-info">
-                <p className="tour-country">
-                  <span>
-                    <i className="fas fa-map"></i>
-                  </span>{" "}
-                  Dindigul,Tamil Nadu.
-                </p>
-              </div>
-            </div>
-          </article>
-
-        </div> */}
-
-
-        </Container>
+       </Row>
+         </Container>
     );
 }

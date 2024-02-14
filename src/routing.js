@@ -8,24 +8,27 @@ import Details from "./hotel/details";
 import HotelPayment from "./hotel/hotelpayment";
 import Restaurent from "./restaurent/restaurents";
 import RestaurentDetails from "./restaurent/restaurentdetails";
+import Login from "./login";
+import Dashboard from "./admin/dashboard";
+import Check from "./check";
 
 export default function Routing(){
     return (
         <>
         <Routes>
             <Route path="/" element={<Signup/>}/>
-            <Route path="/ooty" element={<First id={0}/>}/>
-            <Route path="/valparai" element={<First id={1}/>}/> 
-            <Route path="/home" element={<App/>}/>
-            <Route path="/alltour" element={<AllTour/>}/>
-            <Route path="/hotels" element={<Hotels/>}/>
-            <Route path="/heaven" element={<Details num={0}/>}/>
-            <Route path="/anamols" element={<Details num={1}/>}/>
-            <Route path="/heavenPay" element={<HotelPayment num={0}/>}/>
-            <Route path="/anamolsPay" element={<HotelPayment num={1}/>}/>
-            <Route path="/restaurents" element={<Restaurent/>}/>
-            <Route path="/shareif" element={<RestaurentDetails num={0}/>}/>
-            <Route path="/pavilion" element={<RestaurentDetails num={1}/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route element={<Check/>}>
+               <Route path="/home" element={<App/>}/> 
+               <Route path="/home/tour/:id" element={<First/>}/> 
+               <Route path="/home/alltour" element={<AllTour/>}/>
+               <Route path="/home/hotels" element={<Hotels/>}/>
+               <Route path="/home/hotels/:id" element={<Details/>}/> 
+               <Route path="/home/hotels/payment/:id" element={<HotelPayment />}/> 
+               <Route path="/home/restaurents" element={<Restaurent/>}/>
+               <Route path="/home/restaurent/:id" element={<RestaurentDetails/>}/> 
+            </Route>
         </Routes>
         </>
     );

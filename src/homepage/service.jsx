@@ -8,7 +8,7 @@ export default function Services(){
         </div>
         <div className="section-center featured-center ">
           <article className="tour-card1">
-            <a href="/hotels">
+            <a href="/home/hotels">
               <div className="tour-img-container">
                 <img
                   src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg"
@@ -30,7 +30,7 @@ export default function Services(){
             </div>
           </article>
           <article className="tour-card1">
-            <a href="/restaurents">
+            <a href="/home/restaurents">
               <div className="tour-img-container">
                 <img
                   src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg"

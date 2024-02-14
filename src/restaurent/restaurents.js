@@ -46,17 +46,21 @@ export default function Resturents() {
         <h1 className="title" style={{ fontSize: "2.3rem" }}>
           Restaurents
         </h1>
-        <h3 className="text-center">
-          <input
-            className="searchinput"
-            type="text"
-            placeholder="Enter place name to search"
-            id="hotelsearch"
-          />
-          <button className="searchbtn" onClick={handleClick}>
-            search
-          </button>
-        </h3>
+        <div className="input-group mb-3">
+            <input
+              type="text"
+              className="form-control border-success"
+              placeholder="Enter place name to search"
+              id="hotelsearch" 
+            />
+            <button
+              className="btn btn-success"
+              type="button"
+              onClick={handleClick}
+            >
+              Search
+            </button>
+          </div>
         {details.map((detail) => {
           return (
             <>
