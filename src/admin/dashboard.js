@@ -4,10 +4,9 @@ import { useEffect  } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard(){
-    const navigate=useNavigate(); 
-    axios.defaults.withCredentials=true;
+    const navigate=useNavigate();  
     useEffect(()=>{
-        axios.get("https://tripadvisor-api.onrender.com/dashboard")
+        axios.get("https://tripadvisor-api.onrender.com/dashboard",{ withCredentials: true })
         .then((res)=>{
             if(res.data==="success"){ 
                console.log("welcome admin");
