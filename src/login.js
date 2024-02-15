@@ -12,7 +12,7 @@ export default function Login() {
   const handleSubmit = (e)=> {
     e.preventDefault(); 
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("https://tripadvisor-api.onrender.com/login", { email, password })
       .then((result) => {
         if (result.data.status === "success") {
           if(result.data.role==="admin"){
