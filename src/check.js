@@ -6,7 +6,7 @@ export default function Check(){
     const navigate=useNavigate(); 
     axios.defaults.withCredentials=true;
     useEffect(()=>{
-        axios.get("http://localhost:3001/dashboard")
+        axios.get("https://tripadvisor-api.onrender.com/dashboard")
         .then((res)=>{
             if(res.data==="user"){ 
                 console.log("welcome to Trip Advisor");
