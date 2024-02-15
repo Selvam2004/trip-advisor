@@ -17,7 +17,7 @@ export default function Dashboard(){
             }
         }).catch(err=>console.log(err));
         // eslint-disable-next-line
-        },[]);
+        },[navigate]);
     return ( 
         <>
         <h1>Dashboard</h1> 
