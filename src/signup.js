@@ -41,7 +41,7 @@ export default function Signup() {
 
   const finishSubmit = () => {
     axios
-      .post("http://localhost:3001/register",{name,email,password})
+      .post("https://tripadvisor-api.onrender.com/register",{name,email,password})
       .then(() => {
         navigate("/login");
       })
