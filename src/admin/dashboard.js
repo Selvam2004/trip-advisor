@@ -7,7 +7,7 @@ export default function Dashboard(){
     const navigate=useNavigate(); 
     axios.defaults.withCredentials=true;
     useEffect(()=>{
-        axios.get("http://localhost:3001/dashboard")
+        axios.get("https://tripadvisor-api.onrender.com/dashboard")
         .then((res)=>{
             if(res.data==="success"){ 
                console.log("welcome admin");
