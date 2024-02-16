@@ -40,14 +40,15 @@ export default function Login() {
     <>
       <div className="Auth-form-container">
         <form className="Auth-form" onSubmit={handleSubmit}>
+        <div className="float-start col-sm-12 col-md-6 ">
           <img
             alt="This will Take a while to load"
             id="ig"
             className="float-start"
             src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D"
           />
-
-          <div className="float-end Auth-form-content">
+      </div>
+          <div className="float-end Auth-form-content col-sm-12 col-md-6">
             <h2 className="mt-5" id="tit">
               <b>
                 Explore the world to Experience <br />

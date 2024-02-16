@@ -12,16 +12,14 @@
   }
   
   #ig{ 
-    margin-left: 20px;
-    width: 46%;
-    height: 600px;
-    display: inline;
+    margin-left: 10px;
+    width:97%;
+    height: 600px; 
   }
   #ig2{ 
-    margin-left: 20px;
-    width: 46%;
-    height: 600px;
-    display: inline;
+    margin-left: 10px;
+    width: 97%;
+    height: 600px; 
   }
    
   .Auth-form {

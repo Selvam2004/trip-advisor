@@ -57,14 +57,15 @@ export default function Signup() {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
+      <div className="float-start col-sm-12 col-md-6 ">
         <img
           alt="This will Take a while to load"
           id="ig2"
           className="float-start"
           src="https://cdn.wallpapersafari.com/28/61/6Tr9P7.jpg"
         />
-
-        <div className="float-end Auth-form-content">
+      </div>
+        <div className="float-end Auth-form-content col-sm-12 col-md-6">
           <h2 className="mt-5" id="tit2">
             <b>
               Explore the world to Experience

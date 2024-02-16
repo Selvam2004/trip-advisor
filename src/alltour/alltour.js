@@ -1,11 +1,21 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Data from "./tourdetails.json";
-import { useState } from "react";
-const detail=Data;
+import { useEffect, useState } from "react";
+import axios from 'axios'; 
  
-
+ 
 export default function AllTour(){
-  const [details, setDetails] = useState(detail);
+  const [details, setDetails] = useState([]);
+  const [detail, setDetail] = useState([]);
+ 
+  useEffect(()=>{
+      axios.get('https://tripadvisor-api.onrender.com/alltours')
+      .then((tours)=>{
+        setDetails(tours.data);
+        setDetail(tours.data);
+      })
+      .catch((err)=>console.log(err));
+  },[]); 
   function handleClick() {
     const search = document.getElementById("hotelsearch").value;
     const sorted = detail.filter((detail) => detail.key === search);
@@ -47,7 +57,7 @@ export default function AllTour(){
             </div>
           </div>
         </nav>
-        <h2 className="p-3 text-center" style={{marginLeft:"170px",marginRight:"170px",fontSize:"2.6rem",letterSpacing:"0.4rem"}}>All <span className="subtitle">Tours</span></h2>
+        <h2 className="p-3 text-center  " style={{marginLeft:"170px",marginRight:"170px",fontSize:"2.6rem",letterSpacing:"0.4rem"}}>All <span className="subtitle">Tours</span></h2>
         <div className="input-group mb-3">
             <input
               type="text"
@@ -63,13 +73,13 @@ export default function AllTour(){
               Search
             </button>
         </div>
-        <Row sm={1} md={3} className="g-4">
+        <Row sm={1} xs={1} md={3} className="g-4">
       {details.map((dtl,i) => (
         <Col key={i}>
           <Card className="tour-card" >
-            <a href={"/home/tour/"+dtl.link}><Card.Img variant="top" className="tour-img" src={dtl.src} /></a>
+            <a href={"/home/tour/"+dtl.key}><Card.Img variant="top" className="tour-img" src={dtl.imagesrc} /></a>
             <Card.Body>
-              <Card.Title>{dtl.name}</Card.Title>
+              <Card.Title>{dtl.placename}</Card.Title>
               <Card.Text>
                 <span className="tour-info tour-country">
                 {dtl.location}
