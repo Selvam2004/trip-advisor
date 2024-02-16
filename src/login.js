@@ -7,15 +7,15 @@ export default function Login() {
   let [email,setEmail] = useState();
   let [password,setPassword] = useState();
   let [error, setError] = useState({});
-  const navigate = useNavigate();
-  axios.defaults.withCredentials=true;
+  const navigate = useNavigate(); 
   const handleSubmit = (e)=> {
     e.preventDefault(); 
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("https://tripadvisor-api.onrender.com/login", { email, password },{ withCredentials: true })
       .then((result) => {
         if (result.data.status === "success") {
           if(result.data.role==="admin"){
+            console.log("welcome admin"); 
             navigate("/dashboard");
           }
           else{
