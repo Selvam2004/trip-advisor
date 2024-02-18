@@ -1,7 +1,6 @@
 import { Routes ,Route } from "react-router-dom";
 import Signup from "./signup";
-import App from "./App";
-import First from "./cont/first";
+import App from "./App"; 
 import AllTour from "./alltour/alltour";
 import Hotels from "./hotel/hotels";
 import Details from "./hotel/details";
@@ -11,6 +10,7 @@ import RestaurentDetails from "./restaurent/restaurentdetails";
 import Login from "./login";
 import Dashboard from "./admin/dashboard";
 import Check from "./check";
+import Tour from "./cont/tour";
 
 export default function Routing(){
     return (
@@ -21,7 +21,7 @@ export default function Routing(){
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route element={<Check/>}>
                <Route path="/home" element={<App/>}/> 
-               <Route path="/home/tour/:id" element={<First/>}/> 
+               <Route path="/home/tour/:id" element={<Tour/>}/> 
                <Route path="/home/alltour" element={<AllTour/>}/>
                <Route path="/home/hotels" element={<Hotels/>}/>
                <Route path="/home/hotels/:id" element={<Details/>}/> 

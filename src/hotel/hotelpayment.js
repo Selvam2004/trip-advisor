@@ -13,9 +13,17 @@ import Data from "./hoteldetail.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
+import { useEffect ,useState} from "react";
+import axios from 'axios';
 export default function HotelPayment(props) {
   const { id } = useParams();
-  const num=id;
+  const [details,setDetails] = useState({});
+  useEffect(()=>{
+    axios.get(`https://tripadvisor-api.onrender.com/hotel/${id}`)
+    .then((response)=>setDetails(response.data))
+    .catch((err)=>console.log(err));
+  },[])
+  console.log(details); 
   return (
     <>
     <Container>
@@ -37,7 +45,7 @@ export default function HotelPayment(props) {
             variant="warning"
             style={{ textAlign: "center" }}
           >
-            🎉 Yay! you just saved ₹{Data[num].originalprice - Data[num].price}{" "}
+            🎉 Yay! you just saved ₹{details.originalprice - details.price}{" "}
             on this booking!
           </Alert>
           <Card>
@@ -122,18 +130,18 @@ export default function HotelPayment(props) {
           <Card>
             <Card.Body>
               <Card.Title style={{ fontWeight: "bold", fontSize: "2rem" }}>
-                {Data[num].title}
+                {details.title}
                 <Badge
                   className="ms-3 "
                   style={{ fontSize: "1rem", backgroundColor: "#3fd0d4" }}
                   bg="bsPrefix"
                 >
-                  {Data[num].rating}
+                  {details.rating}
                   <FontAwesomeIcon icon="fa-solid fa-star" />
                 </Badge>
               </Card.Title>
               <Card.Subtitle className="mb-2 mt-3 mb-3 text-muted">
-                {Data[num].location}
+                {details.location}
               </Card.Subtitle>
               <Card.Text>
                 <Card>
@@ -149,21 +157,21 @@ export default function HotelPayment(props) {
                   Original Price:{" "}
                   <span className="float-end" style={{ fontWeight: "bold" }}>
                     <FontAwesomeIcon icon={faIndianRupeeSign} />{" "}
-                    {Data[num].originalprice}
+                    {details.originalprice}
                   </span>
                 </p>
                 <p>
                   Discount:{" "}
                   <span className="float-end" style={{ fontWeight: "bold" }}>
                     <FontAwesomeIcon icon={faIndianRupeeSign} /> -
-                    {Data[num].originalprice - Data[num].price}
+                    {details.originalprice - details.price}
                   </span>
                 </p>
                 <p>
                   Your Savings:{" "}
                   <span className="float-end" style={{ fontWeight: "bold" }}>
                     <FontAwesomeIcon icon={faIndianRupeeSign} />{" "}
-                    {Data[num].originalprice - Data[num].price}
+                    {details.originalprice - details.price}
                   </span>
                 </p>{" "}
                 <hr />
@@ -171,7 +179,7 @@ export default function HotelPayment(props) {
                   Total Payable Amount:{" "}
                   <span className="float-end" style={{ fontWeight: "bold" }}>
                     <FontAwesomeIcon icon={faIndianRupeeSign} />{" "}
-                    {Data[num].price}
+                    {details.price}
                   </span>
                 </p>
               </Card.Text>

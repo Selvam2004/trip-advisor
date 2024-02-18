@@ -7,14 +7,24 @@ import {
   Col,
   Container,
   Row,
-} from "react-bootstrap";
-import Data from "./restaurentdetail.json";
+} from "react-bootstrap"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams } from "react-router-dom";
+import { useEffect ,useState } from "react";
+import axios from 'axios';
 export default function RestaurentDetails(props) {
   const { id } = useParams();
-  const num=id;
-  const img = Data[num].imgarr;
+  const [details, setDetails] = useState([]);
+  const [img,setImg] = useState([]);
+  useEffect(()=>{
+    axios.get(`https://tripadvisor-api.onrender.com/restaurent/${id}`)
+    .then((response)=>{
+      setImg(response.data.imgarr); 
+      setDetails(response.data); 
+  })
+    .catch((err)=>console.log(err));
+  },[]);
+  const num=0; 
   return (
     <>
       <Container>
@@ -34,50 +44,50 @@ export default function RestaurentDetails(props) {
             <Carousel data-bs-theme="dark">
               <Carousel.Item>
                 <img
-                  alt={Data[num].view}
+                  alt={details.view}
                   style={{ height: "18rem" }}
                   src={img[0]}
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  alt={Data[num].view}
+                  alt={details.view}
                   style={{ height: "18rem" }}
                   src={img[1]}
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  alt={Data[num].view}
+                  alt={details.view}
                   style={{ height: "18rem" }}
                   src={img[2]}
                 />
               </Carousel.Item>
             </Carousel>
             <h3 style={{ fontSize: "2.2rem", letterSpacing: "0.2rem" }}>
-              {Data[num].title}
+              {details.title}
               <Badge
                 style={{ fontSize: "1rem", backgroundColor: "gold" }}
                 bg="bsPrefix"
               >
-                {Data[num].rating}
+                {details.rating}
                 <FontAwesomeIcon icon="fa-solid fa-star" />
               </Badge>
             </h3>
             <p style={{ letterSpacing: "0.2rem" }}></p>
             <p>
               <FontAwesomeIcon icon="fa-solid fa-angles-right" />
-              {Data[num].location}
+              {details.location}
               <br />
               <FontAwesomeIcon icon="fa-solid fa-angles-right" />
-              {Data[num].price} for two approx
+              {details.price} for two approx
               <br />
               <FontAwesomeIcon icon="fa-solid fa-angles-right" /> Open from
               11:00 AM - 11:00 PM
             </p>
             <h3>Directions</h3>
             <iframe
-              src={Data[num].map}
+              src={details.map}
               width="600"
               height="450"
               title="direction"

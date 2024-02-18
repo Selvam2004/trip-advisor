@@ -4,19 +4,43 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import "../css/App.css";
 import Places from "./places";
-import Hospitality from "./hospitality";
-import Data from "./data.json";
+import Hospitality from "./hospitality"; 
 import Galry from "./glry";
 import Abt from "./abt";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+export default function Tour() {
+  let { id } = useParams();
+  console.log(id);
+  const key = id;
+  const [data, setData] = useState({});
+  const [head, setHead] = useState([]);
+  const [content, setContent] = useState([]);
+  const [hospitals, setHospitals] = useState([]);
+  const [images, setImages] = useState([]);
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://tripadvisor-api.onrender.com/TourDetails/${key}`
+        );
+        setData(response.data);
+        setHead(response.data.head);
+        setContent(response.data.content);
+        setHospitals(response.data.hospitality);
+        setImages(response.data.images);
+        setAbout(response.data.about);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-export default function First(props) {
-  const { id } = useParams();
-  const head = Data[id].head;
-  const content = Data[id].content;
-  const hospitals = Data[id].hospitality;
-  const images = Data[id].images;
-  const about = Data[id].about;
+    fetchData();
+  }, [id]);
+  console.log(data.hospitality);
+ 
 
   return (
     <>
@@ -63,14 +87,14 @@ export default function First(props) {
           defaultActiveKey="first"
         >
           <Tab eventKey="first" title="Things to do">
-            {content.map((ctnt) => {
-              return <Places content={ctnt} />;
+            {content.map((ctnt, i) => {
+              return <Places key={i} content={ctnt} />;
             })}
           </Tab>
 
           <Tab eventKey="second" title="Hospitality">
-            {hospitals.map((ctnt) => {
-              return <Hospitality content={ctnt} />;
+            {hospitals.map((ctnt, i) => {
+              return <Hospitality key={i} content={ctnt} />;
             })}
           </Tab>
           <Tab eventKey="third" title="Gallery">

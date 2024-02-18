@@ -2,10 +2,20 @@ import { Container } from "react-bootstrap";
 import Data from "./hoteldetail.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hotel from "./hotel";
-import { useState } from "react";
-const detail = Data;
+import { useState ,useEffect} from "react";
+import axios from 'axios';
+ 
 export default function Hotels() {
-  const [details, setDetails] = useState(detail);
+  const [details, setDetails] = useState([]);
+  const [detail, setDetail] = useState([]);
+  useEffect(()=>{
+   axios.get('https://tripadvisor-api.onrender.com/Hotels')
+   .then((response)=>{
+    setDetails(response.data);
+    setDetail(response.data);
+   })
+   .catch((err)=>console.log(err));
+  },[])
   function handleClick() {
     const search = document.getElementById("hotelsearch").value;
     const sorted = detail.filter((detail) => detail.key === search);
@@ -78,10 +88,10 @@ export default function Hotels() {
           >
             search
           </button> */} 
-        {details.map((detail) => {
+        {details.map((detail,i) => {
           return (
             <>
-              <Hotel details={detail} />
+              <Hotel key={i} details={detail} />
             </>
           );
         })}
