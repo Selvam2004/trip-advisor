@@ -38,9 +38,9 @@ export default function Tour() {
     };
 
     fetchData();
-  }, [id]);
+  }, [key]); 
   console.log(data.hospitality);
- 
+  
 
   return (
     <>

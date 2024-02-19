@@ -23,8 +23,7 @@ export default function RestaurentDetails(props) {
       setDetails(response.data); 
   })
     .catch((err)=>console.log(err));
-  },[]);
-  const num=0; 
+  },[id]); 
   return (
     <>
       <Container>
