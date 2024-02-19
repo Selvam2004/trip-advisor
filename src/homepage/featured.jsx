@@ -11,7 +11,7 @@ export default function Featured(){
         <div className="section-center featured-center ">
           <article className="tour-card"> 
               <div className="tour-img-container">
-                <Link to="/home/tour/0"><img
+                <Link to="/home/tour/ooty"><img
                   src={require("../images/ooty.jpg")}
                   className="tour-img"
                   alt=""
@@ -30,7 +30,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="/home/tour/ooty">
+            <a href="/home/tour/valparai">
               <div className="tour-img-container">
                 <img
                   src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
@@ -52,7 +52,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="/home/tour/valparai">
+            <a href="/home/tour/kodaikanal">
               <div className="tour-img-container">
                 <img
                   src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"
