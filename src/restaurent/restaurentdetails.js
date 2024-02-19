@@ -43,21 +43,21 @@ export default function RestaurentDetails(props) {
             <Carousel data-bs-theme="dark">
               <Carousel.Item>
                 <img
-                  alt={details.view}
+                  alt={details.title}
                   style={{ height: "18rem" }}
                   src={img[0]}
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  alt={details.view}
+                  alt={details.title}
                   style={{ height: "18rem" }}
                   src={img[1]}
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  alt={details.view}
+                  alt={details.title}
                   style={{ height: "18rem" }}
                   src={img[2]}
                 />

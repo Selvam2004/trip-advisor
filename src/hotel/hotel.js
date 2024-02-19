@@ -77,7 +77,7 @@ export default function Hotel(props) {
                 </span>
               </h3>
               <div className="float-end ">
-                <a href={"/home/hotels/"+details.view}>
+                <a href={"/home/hotels/"+details.title}>
                   <button
                     className="btn-primary  mb-2"
                     style={{

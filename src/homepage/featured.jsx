@@ -30,7 +30,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="/home/tour/1">
+            <a href="/home/tour/ooty">
               <div className="tour-img-container">
                 <img
                   src= "https://live.staticflickr.com/643/22146922258_4909743b45_b.jpg"
@@ -52,7 +52,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="valparai.html">
+            <a href="/home/tour/valparai">
               <div className="tour-img-container">
                 <img
                   src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"

@@ -29,7 +29,7 @@ export default function Restaurent(props){
              <Badge bg="success">Free Reservation </Badge> {details.offer}
              </p>
              <div className="float-end"> 
-             <a href={"/home/restaurent/"+details.view}><button className="btn p-3 mb-4 me-4 ms-3 btn-warning" style={{letterSpacing:"0.2rem"}}>Book a Table</button></a>
+             <a href={"/home/restaurent/"+details.title}><button className="btn p-3 mb-4 me-4 ms-3 btn-warning" style={{letterSpacing:"0.2rem"}}>Book a Table</button></a>
              </div>
              
             </Card.Body>
