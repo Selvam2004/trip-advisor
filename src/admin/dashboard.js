@@ -25,7 +25,7 @@ export default function Dashboard() {
             .finally(() => {
                 setLoading(false);
             });
-    }, [navigate]);
+    }, []);
 
     if (loading) {
         return <div>Loading...</div>;
