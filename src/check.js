@@ -8,10 +8,10 @@ export default function Check() {
     axios
       .get("https://tripadvisor-api.onrender.com/dashboard",{ withCredentials: true })
       .then((res) => {
-        if (res.data === "user") {
+        if (res.data.status === "user") {
           console.log("welcome to Trip Advisor");
         } else {
-          console.log(res.data);
+          console.log(res.data.name);
           navigate("/");
         }
       })
