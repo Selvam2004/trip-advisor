@@ -1,5 +1,4 @@
-import { Card, Col, Container, Row } from "react-bootstrap";
-import Data from "./tourdetails.json";
+import { Card, Col, Container, Row } from "react-bootstrap"; 
 import { useEffect, useState } from "react";
 import axios from 'axios'; 
  
@@ -77,9 +76,9 @@ export default function AllTour(){
       {details.map((dtl,i) => (
         <Col key={i}>
           <Card className="tour-card" >
-            <a href={"/home/tour/"+dtl.key}><Card.Img variant="top" className="tour-img" src={dtl.imagesrc} /></a>
+            <a href={"/home/tour/"+dtl.key}><Card.Img variant="top" className="tour-img" src={dtl.imgsrc} /></a>
             <Card.Body>
-              <Card.Title>{dtl.placename}</Card.Title>
+              <Card.Title>{dtl.head[0]+dtl.head[1]}</Card.Title>
               <Card.Text>
                 <span className="tour-info tour-country">
                 {dtl.location}

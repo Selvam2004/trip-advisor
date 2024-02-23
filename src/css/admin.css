@@ -1,0 +1,125 @@
+ .adm:hover{
+    background-color: rgb(18, 163, 81);
+    transition: 0.3s linear;
+    border-radius: 10px;
+    color:black;
+ }
+ 
+  .adm{
+   letter-spacing: 0;
+   color: white; 
+   display: block;
+ } 
+  .adm.active {
+  /* Your active styles here */ 
+  color: #000000;
+  background-color: aliceblue;
+  border-radius: 8px;
+  /* Add rgb(11, 10, 10)other styles you want to apply to the active state */
+} 
+.card{
+  color: dark;
+  font-weight:bold;
+  background-color: #d5dee0;
+}
+.bt{
+  width: 25%;
+  border: 2px solid rgb(70, 243, 255);
+  background-color: rgb(100, 209, 209);
+  color: white;
+  letter-spacing:4px;
+  text-transform: uppercase;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s linear;
+}
+.bt:hover{
+  color:  rgb(100, 209, 209);
+  background-color: white;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+}
+
+.cnt {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.h {
+  color: rgb(0, 0, 0);
+}
+
+.ring {
+  width: 190px;
+  height: 190px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.ring:nth-child(1) {
+  border-bottom: 8px solid rgb(255, 141, 249);
+  animation: rotate1 2s linear infinite;
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotateX(50deg) rotateZ(110deg);
+  }
+
+  to {
+    transform: rotateX(50deg) rotateZ(470deg);
+  }
+}
+
+.ring:nth-child(2) {
+  border-bottom: 8px solid rgb(255,65,106);
+  animation: rotate2 2s linear infinite;
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
+  }
+
+  to {
+    transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
+  }
+}
+
+.ring:nth-child(3) {
+  border-bottom: 8px solid rgb(0,255,255);
+  animation: rotate3 2s linear infinite;
+}
+
+@keyframes rotate3 {
+  from {
+    transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
+  }
+
+  to {
+    transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
+  }
+}
+
+.ring:nth-child(4) {
+  border-bottom: 8px solid rgb(252, 183, 55);
+  animation: rotate4 2s linear infinite;
+}
+
+@keyframes rotate4 {
+  from {
+    transform: rotateX(70deg) rotateZ(270deg);
+  }
+
+  to {
+    transform: rotateX(70deg) rotateZ(630deg);
+  }
+}
