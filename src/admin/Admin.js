@@ -6,7 +6,7 @@ export default function Admin(){
     const [email,setEmail]=useState();
     const [password,setPassword]=useState();
     const [rmemail,setRmEmail]=useState();
-    const [role,setRole]=useState('admin');
+    const role='admin';
     const [loading,setLoading]=useState(false);
     
     const handleAdd=(e)=>{

@@ -60,7 +60,7 @@ const handleRemove=(e)=>{
   e.preventDefault();
   axios.post('https://tripadvisor-api.onrender.com/removeHotel',{remove})
   .then((res)=>alert('Hotel Deleted'))
-  .catch((err)=>consolelog(err));
+  .catch((err)=>console.log(err));
 }
 if(loading){
   return(
