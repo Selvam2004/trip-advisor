@@ -8,8 +8,7 @@ import {
   ListGroup,
   Row,
   Tab,
-} from "react-bootstrap";
-import Data from "./hoteldetail.json";
+} from "react-bootstrap"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
@@ -18,11 +17,14 @@ import axios from 'axios';
 export default function HotelPayment(props) {
   const { id } = useParams();
   const [details,setDetails] = useState({});
+  const [loading,setLoading] = useState(true);
   useEffect(()=>{
     axios.get(`https://tripadvisor-api.onrender.com/hotel/${id}`)
-    .then((response)=>setDetails(response.data))
-    .catch((err)=>console.log(err));
-  },[])
+  .then((response)=>{
+  setDetails(response.data);
+  setLoading(false);
+   }).catch((err)=>console.log(err));
+  },[id])
   console.log(details); 
   return (
     <>
@@ -38,6 +40,15 @@ export default function HotelPayment(props) {
           </div>
         </div>
       </nav>
+      {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:
       <Row>
         <Col md={7}>
           <Alert
@@ -187,6 +198,7 @@ export default function HotelPayment(props) {
           </Card>
         </Col>
       </Row>
+}
     </Container>
     <footer className="section footer mt-3">
         <p className="copyright">

@@ -1,5 +1,4 @@
-import { Container } from "react-bootstrap";
-import Data from "./hoteldetail.json";
+import { Container } from "react-bootstrap"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hotel from "./hotel";
 import { useState ,useEffect} from "react";
@@ -8,11 +7,13 @@ import axios from 'axios';
 export default function Hotels() {
   const [details, setDetails] = useState([]);
   const [detail, setDetail] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(()=>{
    axios.get('https://tripadvisor-api.onrender.com/Hotels')
    .then((response)=>{
     setDetails(response.data);
     setDetail(response.data);
+    setLoading(false);
    })
    .catch((err)=>console.log(err));
   },[])
@@ -74,21 +75,16 @@ export default function Hotels() {
             >
               Search
             </button>
-          </div>
-
-          {/* <input
-            className="searchinput"
-            type="text"
-            placeholder="Enter place name to search"
-            id="hotelsearch"
-          />
-          <button 
-            className="searchbtn"
-            onClick={handleClick}
-          >
-            search
-          </button> */} 
-        {details.map((detail,i) => {
+          </div> 
+          {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:  details.map((detail,i) => {
           return (
             <>
               <Hotel key={i} details={detail} />

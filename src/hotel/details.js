@@ -31,18 +31,20 @@ export default function Details(props) {
   const [details,setDetails] = useState({});
   const [img,setImg] = useState([]);
   const [amnts,setAmnts] = useState([]);
+  const [loading,setLoading] = useState(true);
   useEffect(()=>{
     axios.get(`https://tripadvisor-api.onrender.com/hotel/${title}`)
     .then((response)=>{
       setImg(response.data.imgarr); 
       setDetails(response.data);
       setAmnts(response.data.avail);
+      setLoading(false);
   })
     .catch((err)=>console.log(err));
-  },[]); 
+  },[title]); 
   return (
     <>
-      <Container>
+      <Container >
         <nav className="navbar">
           <div className="nav-center">
             <div className="nav-header">
@@ -54,28 +56,27 @@ export default function Details(props) {
             </div>
           </div>
         </nav>
+        {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:<div>
         <Carousel data-bs-theme="dark" className="m-5">
-          <Carousel.Item>
-            <img
-              alt={details.title}
-              style={{ height: "28rem" }}
-              src={img[0]}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              alt={details.title}
-              style={{ height: "28rem" }}
-              src={img[1]}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              alt={details.title}
-              style={{ height: "28rem" }}
-              src={img[2]}
-            />
-          </Carousel.Item>
+        {img.map((source)=>{
+                return (
+              <Carousel.Item>
+                <img
+                  alt={details.title}
+                  style={{ height: "18rem" }}
+                  src={source}
+                />
+              </Carousel.Item> 
+                );               
+              })} 
         </Carousel>
         <div className="m-5">
           <Row className="m-5">
@@ -98,18 +99,17 @@ export default function Details(props) {
               </div>
               <div style={{ clear: "both" }}></div>
               <h3>Amenities</h3>
-              <p>
+              <Row md={2} sm={2}>
                 {amnts.map((obj) => {
                   return (
-                    <>
+                    <Col className="mt-2  ">
+                      <div  className="border border-1 p-3 text-center amnts" >
                       <FontAwesomeIcon icon={obj.icon} /> {obj.description}{" "}
-                      &nbsp;&nbsp;&nbsp;
-                      <br />
-                      <br />
-                    </>
+                      </div>
+                    </Col>
                   );
                 })}
-              </p>
+              </Row>
               <h3>About</h3>
               <p>Affordable hotels at prime location.</p>
               <h3>Hotel Policies</h3>
@@ -205,6 +205,8 @@ export default function Details(props) {
             </Col>
           </Row>
         </div>
+        </div>
+}
       </Container>
       <footer className="section footer mt-2">
         <p className="copyright">

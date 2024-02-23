@@ -5,11 +5,13 @@ import axios from 'axios';
 export default function Resturents() {
   const [details, setDetails] = useState([]);
   const [detail, setDetail] = useState([]);
+  const [loading,setLoading] = useState(true);
   useEffect(()=>{
    axios.get('https://tripadvisor-api.onrender.com/Restaurents')
    .then((response)=>{
     setDetails(response.data);
     setDetail(response.data);
+    setLoading(false);
    })
    .catch((err)=>console.log(err));
   },[])
@@ -69,7 +71,15 @@ export default function Resturents() {
               Search
             </button>
           </div>
-        {details.map((detail) => {
+          {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:details.map((detail) => {
           return (
             <>
               <Restaurent details={detail} />

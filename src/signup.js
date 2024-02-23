@@ -10,6 +10,7 @@ export default function Signup() {
   let [name,setName] =useState();
   let [email,setEmail] = useState();
   let [password,setPassword] = useState(); 
+  let [loading,setLoading] = useState(false); 
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -39,16 +40,20 @@ export default function Signup() {
     return errors;
   };
 
-  const finishSubmit = () => {
+  const finishSubmit = (e) => {
+    setLoading(true); 
     axios
       .post("https://tripadvisor-api.onrender.com/register",{name,email,password})
       .then(() => {
         navigate("/login");
+        setLoading(false);
       })
       .catch((err) => console.log(err));
+    
   };
   useEffect(() => {
     if (Object.keys(errors).length === 0 && submitting) {
+      
       finishSubmit();
     }
     // eslint-disable-next-line 
@@ -65,6 +70,15 @@ export default function Signup() {
           src="https://cdn.wallpapersafari.com/28/61/6Tr9P7.jpg"
         />
       </div>
+      {loading?<div className="float-end Auth-form-content col-sm-12 col-md-6">    <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div></div>  
+   </div>:
         <div className="float-end Auth-form-content col-sm-12 col-md-6">
           <h2 className="mt-5" id="tit2">
             <b>
@@ -117,6 +131,7 @@ export default function Signup() {
             </button>
           </div>
         </div>
+}
       </form>
     </div>
   );

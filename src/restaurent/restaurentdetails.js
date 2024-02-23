@@ -16,17 +16,18 @@ export default function RestaurentDetails(props) {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
   const [img,setImg] = useState([]);
+  const [loading,setLoading] = useState(true);
   useEffect(()=>{
     axios.get(`https://tripadvisor-api.onrender.com/restaurent/${id}`)
     .then((response)=>{
       setImg(response.data.imgarr); 
       setDetails(response.data); 
-  })
-    .catch((err)=>console.log(err));
+      setLoading(false);
+  }).catch((err)=>console.log(err));
   },[id]); 
   return (
     <>
-      <Container>
+      <Container >
         <nav className="navbar">
           <div className="nav-center">
             <div className="nav-header">
@@ -38,30 +39,28 @@ export default function RestaurentDetails(props) {
             </div>
           </div>
         </nav>
-        <Row className="m-5">
+        {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:<Row className="m-5">
           <Col md={8}>
             <Carousel data-bs-theme="dark">
+              {img.map((source)=>{
+                return (
               <Carousel.Item>
                 <img
                   alt={details.title}
                   style={{ height: "18rem" }}
-                  src={img[0]}
+                  src={source}
                 />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt={details.title}
-                  style={{ height: "18rem" }}
-                  src={img[1]}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt={details.title}
-                  style={{ height: "18rem" }}
-                  src={img[2]}
-                />
-              </Carousel.Item>
+              </Carousel.Item> 
+                );               
+              })} 
             </Carousel>
             <h3 style={{ fontSize: "2.2rem", letterSpacing: "0.2rem" }}>
               {details.title}
@@ -184,7 +183,7 @@ export default function RestaurentDetails(props) {
               </CardBody>
             </Card>
           </Col>
-        </Row>
+        </Row>}
       </Container>
       <footer className="section footer">
         <p className="copyright">

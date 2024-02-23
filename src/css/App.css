@@ -227,9 +227,11 @@ a {
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
   margin-bottom: 4rem;
+  
 }
 .tour-card:hover {
   box-shadow: var(--darkShadow);
+  
 }
 .tour-footer {
   padding: 1.2rem 1.5rem;
@@ -254,6 +256,7 @@ a {
 }
 .tour-country {
   align-self: center;
+
   color: var(--primaryColor);
 }
 .tour-link {
@@ -261,22 +264,24 @@ a {
 }
 /* tour date */
 .tour-img-container {
-  position: relative;
-}
+  position: relative;    
+  height: 70%;
+  overflow: hidden;
+} 
 .tour-img1{
-  height: 400px;
+  height: 400px;  
+  transition: var(--mainTransition); 
 }
 .tour-img{
-  height: 250px;
+  height: 250px;   
+  transition: var(--mainTransition); 
 }
-.tour-date {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--primaryColor);
-  text-transform: capitalize;
-  padding: 0.25rem 0.5rem;
-}
+.tour-img:hover{
+  transform: scale(1.1); 
+} 
+.tour-img1:hover{
+  transform: scale(1.1); 
+} 
 @media screen and (min-width: 768px) {
   .featured-center {
     display: flex;
@@ -302,8 +307,8 @@ a {
   background: var(--darkGrey);
 }
 .gallery-img-container {
-  position: relative;
-  background: var(--primaryColor);
+  position: relative; 
+  overflow: hidden;
 }
 .gallery-icon {
   position: absolute;
@@ -320,10 +325,10 @@ a {
   transition: var(--mainTransition);
 }
 .gallery-img-container:hover .gallery-img {
-  opacity: 0.5;
+  transform: scale(1.1); 
 }
 .gallery-img-container:hover .gallery-icon {
-  opacity: 1;
+  opacity: 1; 
 }
 @media screen and (min-width: 768px) {
   .gallery-center {

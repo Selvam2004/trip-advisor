@@ -6,12 +6,14 @@ import axios from 'axios';
 export default function AllTour(){
   const [details, setDetails] = useState([]);
   const [detail, setDetail] = useState([]);
+  const [loading, setLoading] = useState(true);
  
   useEffect(()=>{
       axios.get('https://tripadvisor-api.onrender.com/alltours')
       .then((tours)=>{
         setDetails(tours.data);
         setDetail(tours.data);
+        setLoading(false);
       })
       .catch((err)=>console.log(err));
   },[]); 
@@ -72,11 +74,20 @@ export default function AllTour(){
               Search
             </button>
         </div>
+        {loading?  <div className="page" >
+      <div className="cnt">
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="ring"></div>
+          <div className="h">loading</div>
+      </div> 
+   </div>:
         <Row sm={1} xs={1} md={3} className="g-4">
       {details.map((dtl,i) => (
         <Col key={i}>
           <Card className="tour-card" >
-            <a href={"/home/tour/"+dtl.key}><Card.Img variant="top" className="tour-img" src={dtl.imgsrc} /></a>
+            <div className="tour-img-container"><a href={"/home/tour/"+dtl.key}><Card.Img variant="top" className="tour-img" src={dtl.imgsrc} /></a></div>
             <Card.Body>
               <Card.Title>{dtl.head[0]+dtl.head[1]}</Card.Title>
               <Card.Text>
@@ -89,6 +100,7 @@ export default function AllTour(){
         </Col>
       ))}
        </Row>
+}
          </Container>
     );
 }
