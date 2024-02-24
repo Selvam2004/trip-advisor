@@ -3,26 +3,26 @@ import { useEffect,useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 export default function Home(){
-    // const [logOut,setLogOut]=useState(true);
+    const [logOut,setLogOut]=useState(true);
     const [name,setName]=useState();
     const [email,setEmail]=useState();
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     axios
-    //       .get("https://tripadvisor-api.onrender.com/dashboard", { withCredentials: true })
-    //       .then((res) => {
-    //         if (logOut) {
-    //           setName(res.data.name);
-    //           setEmail(res.data.email); 
-    //         }
-    //         else {
-    //         console.log(res.data);
-    //         navigate("/");
-    //       }
-    //     }).catch((err) => console.log(err));
-    //     // eslint-disable-next-line
-    //   }, [logOut]); 
+    useEffect(() => {
+        axios
+          .get("https://tripadvisor-api.onrender.com/dashboard", { withCredentials: true })
+          .then((res) => {
+            if (logOut) {
+              setName(res.data.name);
+              setEmail(res.data.email); 
+            }
+            else {
+            console.log(res.data);
+            navigate("/");
+          }
+        }).catch((err) => console.log(err));
+        // eslint-disable-next-line
+      }, [logOut]); 
     return (
         <>
             <header id="home">
@@ -53,14 +53,14 @@ export default function Home(){
                
             </div>
             <div className="nav-icons">
-            <div className="paste-button">
-              <button className="butt">
+            <div class="paste-button">
+              <button class="butt">
                 <i className="bi bi-person-circle"></i>
                 <span className="m-2 p-2">{name} &nbsp; ▼</span></button>
             <div class="dropdown-content">
                <a id="top" href="/home">{email}</a>
                <a id="middle" href="/home">My Bookings</a>
-               <div id="bottom"  >Log Out</div>
+               <div id="bottom" onClick={setLogOut(false)}>Log Out</div>
             </div>
             </div>
 

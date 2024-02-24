@@ -11,7 +11,7 @@ export default function Check() {
         if (res.data.status === "user") {
           console.log("welcome to Trip Advisor");
         } else {
-          console.log(res.data.name);
+          console.log(res.data);
           navigate("/");
         }
       })
