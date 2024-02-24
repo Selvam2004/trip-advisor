@@ -25,7 +25,7 @@ export default function AllTour(){
     return (
         <Container> 
         
-        <nav className="navbar">
+        <nav className="navbar  bg-success bg-gradient">
 
           <div className="nav-center">
             <div className="nav-header">

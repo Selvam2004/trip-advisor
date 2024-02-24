@@ -24,7 +24,7 @@ export default function Resturents() {
   return (
     <>
       <Container>
-        <nav className="navbar">
+        <nav className="navbar bg-secondary bg-gradient">
           <div className="nav-center">
             <div className="nav-header">
               <div>

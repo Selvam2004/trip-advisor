@@ -2,8 +2,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect,useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-export default function Home(){
-    const [logOut,setLogOut]=useState(true);
+export default function Home(){ 
+    const [logout,setLogout]=useState(true);
     const [name,setName]=useState();
     const [email,setEmail]=useState();
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function Home(){
         axios
           .get("https://tripadvisor-api.onrender.com/dashboard", { withCredentials: true })
           .then((res) => {
-            if (logOut) {
+            if (logout) {
               setName(res.data.name);
               setEmail(res.data.email); 
             }
@@ -22,11 +22,11 @@ export default function Home(){
           }
         }).catch((err) => console.log(err));
         // eslint-disable-next-line
-      }, [logOut]); 
+      }, [logout]); 
     return (
         <>
             <header id="home">
-        <nav className="navbar bg-secondary"> 
+        <nav className="navbar bg-secondary bg-gradient"> 
           
           <div className="nav-center">
             <div >
@@ -53,14 +53,14 @@ export default function Home(){
                
             </div>
             <div className="nav-icons">
-            <div class="paste-button">
-              <button class="butt">
+            <div className="paste-button">
+              <button className="butt">
                 <i className="bi bi-person-circle"></i>
                 <span className="m-2 p-2">{name} &nbsp; ▼</span></button>
-            <div class="dropdown-content">
-               <a id="top" href="/home">{email}</a>
-               <a id="middle" href="/home">My Bookings</a>
-               <div id="bottom" onClick={setLogOut(false)}>Log Out</div>
+            <div className="dropdown-content">
+               <div id="top"  >{email}</div>
+               <div id="middle" >My Bookings</div>
+               <div id="bottom" onClick={()=>setLogout(false)}>Log Out</div>
             </div>
             </div>
 

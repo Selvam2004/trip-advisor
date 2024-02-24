@@ -13,8 +13,8 @@ import axios from "axios";
 export default function Tour() {
   let { id } = useParams();
   console.log(id);
-  const key = id;
-  const [data, setData] = useState({});
+  const key = id; 
+  const [loading,setLoading]=useState(true);
   const [head, setHead] = useState([]);
   const [content, setContent] = useState([]);
   const [hospitals, setHospitals] = useState([]);
@@ -26,12 +26,13 @@ export default function Tour() {
         const response = await axios.get(
           `https://tripadvisor-api.onrender.com/TourDetails/${key}`
         );
-        setData(response.data);
+  
         setHead(response.data.head);
         setContent(response.data.content);
         setHospitals(response.data.hospitality);
         setImages(response.data.images);
         setAbout(response.data.about);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -39,13 +40,25 @@ export default function Tour() {
 
     fetchData();
   }, [key]); 
-  console.log(data.hospitality);
-  
-
+   
+if(loading){
+  return (
+    <div className="page" >
+    <div className="cnt">
+        <div className="ring"></div>
+        <div className="ring"></div>
+        <div className="ring"></div>
+        <div className="ring"></div>
+        <div className="h">loading</div>
+    </div> 
+   </div>
+  );
+}
+else{
   return (
     <>
       <Container>
-        <nav className="navbar">
+        <nav className="navbar  bg-success bg-gradient">
           <div className="nav-center">
             <div className="nav-header">
               <div>
@@ -112,4 +125,6 @@ export default function Tour() {
       </footer>
     </>
   );
+}
+  
 }
