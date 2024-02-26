@@ -29,8 +29,8 @@ export default function HotelPayment(props) {
   return (
     <>
     <Container>
-      <nav className="navbar bg-secondary bg-gradient">
-        <div className="nav-center">
+      <nav className="navbar bg-secondary mb-2 bg-gradient">
+        <div className="nav-center float-start">
           <div className="nav-header">
             <div>
               <h2 className="tle">
@@ -39,6 +39,19 @@ export default function HotelPayment(props) {
             </div>
           </div>
         </div>
+        <div className="nav-icons float-end">
+            <div className="paste-button">
+              <button className="butt">
+                <i className="bi bi-person-circle"></i>
+                <span className="m-2 p-2">My Bookings &nbsp; ▼</span></button>
+            <div className="dropdown-content">
+               <div id="top"  >  </div>
+               <div id="middle" >My Bookings</div>
+               <div id="bottom">Log Out</div>
+            </div>
+            </div>
+
+             </div>
       </nav>
       {loading?  <div className="page" >
       <div className="cnt">
