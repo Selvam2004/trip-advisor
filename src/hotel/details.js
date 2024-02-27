@@ -14,6 +14,7 @@ import { faTwitter, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import { useParams } from "react-router-dom";
 import { useEffect ,useState } from "react";
 import axios from 'axios';
+import Loader from "../loader";
 library.add(
   fas,
   faTwitter,
@@ -32,6 +33,7 @@ export default function Details(props) {
   const [img,setImg] = useState([]);
   const [amnts,setAmnts] = useState([]);
   const [loading,setLoading] = useState(true);
+  const date=new Date();
   useEffect(()=>{
     axios.get(`https://tripadvisor-api.onrender.com/hotel/${title}`)
     .then((response)=>{
@@ -56,15 +58,7 @@ export default function Details(props) {
             </div>
           </div>
         </nav>
-        {loading?  <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div> 
-   </div>:<div>
+        {loading?  <Loader/>:<div>
         <Carousel data-bs-theme="dark" className="m-5">
         {img.map((source)=>{
                 return (
@@ -161,9 +155,9 @@ export default function Details(props) {
                   <Card.Text>
                     <Card>
                       <Card.Body>
-                        <b style={{ fontWeight: "bold" }}>
-                          Sun,31 Dec-Mon,1 Jan &nbsp;&nbsp; 1 Room, 1 Guest
-                        </b>
+                      <b style={{ fontWeight: "bold" }}>
+                       {date.getDate()+1+"-"+date.getMonth()+"-"+date.getFullYear()} &nbsp;&nbsp; 1 Room, {details.guest} Guest
+                    </b>
                       </Card.Body>
                     </Card>
                     <br />
@@ -171,7 +165,7 @@ export default function Details(props) {
                     &nbsp;&nbsp;
                     <b style={{ fontWeight: "bold" }}>
                       <FontAwesomeIcon icon={faIndianRupeeSign} /> -
-                      {details.originalprice - details.price}
+                      {details.originalprice - details.price }
                     </b>
                     <hr />
                     <p>
@@ -181,7 +175,7 @@ export default function Details(props) {
                         style={{ fontWeight: "bold" }}
                       >
                         <FontAwesomeIcon icon={faIndianRupeeSign} />{" "}
-                        {details.originalprice - details.price}
+                        {details.originalprice - details.price }
                       </span>
                     </p>
                     <p>
@@ -191,11 +185,11 @@ export default function Details(props) {
                         style={{ fontWeight: "bold" }}
                       >
                         <FontAwesomeIcon icon={faIndianRupeeSign} />{" "}
-                        {details.price}
+                        {details.price }
                       </span>
                     </p>
                     <a href={"/home/hotels/payment/"+details.title}>
-                      <button className="btn-primary pe-5">
+                      <button className="btn-primary ">
                         Continue to Booking
                       </button>
                     </a>

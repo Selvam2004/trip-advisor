@@ -3,6 +3,7 @@ import "./css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loader from "./loader";
 
 export default function Signup() {
   const [errors, setErrors] = useState({});
@@ -70,15 +71,7 @@ export default function Signup() {
           src="https://cdn.wallpapersafari.com/28/61/6Tr9P7.jpg"
         />
       </div>
-      {loading?<div className="float-end Auth-form-content col-sm-12 col-md-6">    <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div></div>  
-   </div>:
+      {loading?<div className="float-end Auth-form-content col-sm-12 col-md-6"><Loader/> </div>:
         <div className="float-end Auth-form-content col-sm-12 col-md-6">
           <h2 className="mt-5" id="tit2">
             <b>

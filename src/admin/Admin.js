@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import Loader from '../loader';
 export default function Admin(){
     const [name,setName]=useState();
     const [email,setEmail]=useState();
@@ -29,15 +30,7 @@ export default function Admin(){
     if(loading){
         return(
           <>
-          <div className="page" >
-            <div className="cnt">
-                <div className="ring"></div>
-                <div className="ring"></div>
-                <div className="ring"></div>
-                <div className="ring"></div>
-                <div className="h">loading</div>
-            </div>
-        </div>
+           <Loader/>
       
           </>
         )

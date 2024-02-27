@@ -25,7 +25,7 @@ export default function Restaurent(props){
              <Card.Subtitle className="mb-2 text-muted" style={{letterSpacing:"0.2rem"}}>Rating:<Badge bg="bsPrefix" style={{backgroundColor:"gold"}}>{details.rating}<FontAwesomeIcon icon="fa-solid fa-star" /></Badge> </Card.Subtitle>
              
              <p className="float-start  ">
-              Cost for two <FontAwesomeIcon icon={faIndianRupeeSign} />  {details.price} &nbsp;approx <br/>
+              <FontAwesomeIcon icon={faIndianRupeeSign} />  {details.price} &nbsp;approx  for {details.guest} Person<br/>
              <Badge bg="success">Free Reservation </Badge> {details.offer}
              </p>
              <div className="float-end"> 

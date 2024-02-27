@@ -9,6 +9,7 @@ import Galry from "./glry";
 import Abt from "./abt";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Loader from "../loader";
 import axios from "axios";
 export default function Tour() {
   let { id } = useParams();
@@ -43,15 +44,7 @@ export default function Tour() {
    
 if(loading){
   return (
-    <div className="page" >
-    <div className="cnt">
-        <div className="ring"></div>
-        <div className="ring"></div>
-        <div className="ring"></div>
-        <div className="ring"></div>
-        <div className="h">loading</div>
-    </div> 
-   </div>
+     <Loader/>
   );
 }
 else{

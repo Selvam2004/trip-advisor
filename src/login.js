@@ -3,6 +3,7 @@ import "./css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loader from "./loader";
 
 export default function Login() { 
   let [email,setEmail] = useState();
@@ -52,15 +53,7 @@ export default function Login() {
             src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D"
           />
       </div>
-      {loading?<div className="float-end Auth-form-content col-sm-12 col-md-6">    <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div></div>  
-   </div>:
+      {loading?<div className="float-end Auth-form-content col-sm-12 col-md-6"> <Loader/> </div>:
           <div className="float-end Auth-form-content col-sm-12 col-md-6">
             
             <h2 className="mt-5" id="tit">

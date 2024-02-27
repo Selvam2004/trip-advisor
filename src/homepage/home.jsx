@@ -59,7 +59,7 @@ export default function Home(){
                 <span className="m-2 p-2">{name} &nbsp; ▼</span></button>
             <div className="dropdown-content">
                <div id="top"  >{email}</div>
-               <div id="middle" >My Bookings</div>
+               <a href="/home/bookings"><div id="middle">My Bookings</div></a>
                <div id="bottom" onClick={()=>setLogout(false)}>Log Out</div>
             </div>
             </div>

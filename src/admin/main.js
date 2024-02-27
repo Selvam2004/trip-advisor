@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {Card, Col, Container, Row} from 'react-bootstrap';
 import axios from 'axios';
+import Loader from '../loader';
 export default function Main(){
     const [user,setUser]=useState(0);
     const [admin,setAdmin]=useState(0);
@@ -23,15 +24,7 @@ export default function Main(){
     if(loading){
       return(
         <>
-        <div className="page" >
-          <div className="cnt">
-              <div className="ring"></div>
-              <div className="ring"></div>
-              <div className="ring"></div>
-              <div className="ring"></div>
-              <div className="h">loading</div>
-          </div>
-      </div>
+       <Loader/>
     
         </>
       )

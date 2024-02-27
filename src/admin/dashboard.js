@@ -1,17 +1,14 @@
 import axios from "axios";
 import {  useEffect, useState } from "react";
-import {  Col, Container, Nav,Row } from "react-bootstrap";
+import {  Col,  Nav,Row } from "react-bootstrap";
 import { Outlet,useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"; 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";
 import "../css/admin.css";
+import Loader from '../loader';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChartBar,
-  faClipboardList,
-  faCog,
-  faHome,
+import { 
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 export default function Dashboard() {
@@ -46,15 +43,7 @@ export default function Dashboard() {
   if(loading){
     return(
       <>
-      <div className="page" >
-        <div className="cnt">
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="h">loading</div>
-        </div>
-    </div>
+       <Loader/>
       </>
     )
   }
@@ -67,13 +56,13 @@ export default function Dashboard() {
           className="bg-dark min-vh-100   col-auto d-flex justify-content-between flex-column "
         >
           <div className="position-fixed">
-            <a className="align-itemcenter text-white d-none d-sm-inline  d-flex text-decoration-none ms-3 mt-2">
+            <div className="align-itemcenter text-white d-none d-sm-inline  d-flex text-decoration-none ms-3 mt-2">
               <div>
                 <h2 className="text-uppercase text-center ms-3">
                   trip <span className="subtitle">advisor</span>
                 </h2>
               </div>
-            </a>
+            </div>
             <hr />
             <Nav
               className="flex-column w-100"
@@ -140,7 +129,7 @@ export default function Dashboard() {
             </Nav> 
           </div>
           <div className="dropdown open fixed-bottom ms-2 my-2 fs-4">
-            <a
+            <div
               className="text-decoration-none text-white dropdown-toggle p-3"
               data-bs-toggle="dropdown"
               type="button"
@@ -149,10 +138,10 @@ export default function Dashboard() {
             >
               <i className="bi bi-person-circle"></i>
               <span className="ms-2">{name}</span>
-            </a>
+            </div>
             <div className="dropdown-menu" aria-labelledby="triggerId">
-              <a className="dropdown-item">{email}</a>
-              <a className="dropdown-item" onClick={(e)=>setLogOut(false)}>Log Out</a>
+              <div className="dropdown-item">{email}</div>
+              <button className="dropdown-item" onClick={(e)=>setLogOut(false)}>Log Out</button>
             </div>
           </div>
         </Col>

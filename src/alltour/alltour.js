@@ -1,6 +1,7 @@
 import { Card, Col, Container, Row } from "react-bootstrap"; 
 import { useEffect, useState } from "react";
 import axios from 'axios'; 
+import Loader from "../loader";
  
  
 export default function AllTour(){
@@ -74,15 +75,7 @@ export default function AllTour(){
               Search
             </button>
         </div>
-        {loading?  <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div> 
-   </div>:
+        {loading? <Loader/>:
         <Row sm={1} xs={1} md={3} className="g-4">
       {details.map((dtl,i) => (
         <Col key={i}>

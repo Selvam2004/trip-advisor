@@ -1,22 +1,25 @@
 import {
-  Badge,
+  Badge, 
+  Button, 
   Card,
   CardBody,
   CardTitle,
   Carousel,
   Col,
-  Container,
+  Container, 
   Row,
 } from "react-bootstrap"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { useEffect ,useState } from "react";
+import Loader from "../loader";
 import axios from 'axios';
 export default function RestaurentDetails(props) {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
   const [img,setImg] = useState([]);
   const [loading,setLoading] = useState(true);
+ const d=new Date();
   useEffect(()=>{
     axios.get(`https://tripadvisor-api.onrender.com/restaurent/${id}`)
     .then((response)=>{
@@ -39,15 +42,7 @@ export default function RestaurentDetails(props) {
             </div>
           </div>
         </nav>
-        {loading?  <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div> 
-   </div>:<Row className="m-5">
+        {loading?<Loader/>:<Row className="m-5">
           <Col md={8}>
             <Carousel data-bs-theme="dark">
               {img.map((source)=>{
@@ -98,88 +93,24 @@ export default function RestaurentDetails(props) {
             <Card>
               <CardBody>
                 <CardTitle>Table Reservation deals for</CardTitle>
-                <form>
-                  <input className="form-control d-inline mb-3" type="date" />
-                  <select
-                    class="form-select mb-3"
-                    aria-label="Default select example"
-                  >
-                    <option selected>select Guest</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <option value="4">Four</option>
-                  </select>
-                  <b> Select Slot</b>
-                  <br />
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option1"
-                    autocomplete="off"
-                    checked
-                  />
-                  <label class="btn btn-warning m-1" for="option1">
-                    5:00 PM
-                  </label>
-
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option2"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-warning m-1" for="option2">
-                    5:30 PM
-                  </label>
-
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option3"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-warning m-1" for="option3">
-                    6:00 PM
-                  </label>
-
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option4"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-warning m-1" for="option4">
-                    6:30 PM
-                  </label>
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option4"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-warning m-1" for="option4">
-                    7:00 PM
-                  </label>
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="options"
-                    id="option4"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-warning m-1" for="option4">
-                    7:30 PM
-                  </label>
-                  <button className="btn-primary w-100 rounded mt-4">
-                    Confirm Booking
-                  </button>
-                </form>
+                <Card className="text-center">
+                  <Card.Body>
+                <b style={{ fontWeight: "bold" }}>
+                        {d.getDate()+"-"+d.getMonth()+"-"+d.getFullYear()  }<br/> 
+                        Slot: 6:30PM &nbsp; Guest:2<br/>
+                        
+                  </b></Card.Body>
+                  <Card.Footer>
+                    Offer:{details.offer}
+                  </Card.Footer>
+                </Card>
+                <hr/>
+                Price:<span className="float-end">{details.price}</span><br/>
+                Guest:<span className="float-end">{details.guest}</span><hr/>
+                      <Link  to={`/home/restaurent/payment/${details.title}`}>
+                    <Button className="btn-primary w-100 rounded mt-4">
+                    Continue Booking
+                  </Button></Link> 
               </CardBody>
             </Card>
           </Col>

@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import Restaurent from "./restaurent";
 import { useState ,useEffect} from "react"; 
 import axios from 'axios';
+import Loader from "../loader";
 export default function Resturents() {
   const [details, setDetails] = useState([]);
   const [detail, setDetail] = useState([]);
@@ -50,7 +51,16 @@ export default function Resturents() {
                 gallery
               </a>
             </div>
-            <div className="nav-icons"></div>
+            <div className="nav-icons">
+            <div className="paste-button">
+              <a href="/home/bookings"><button className="butt">
+                <i className="bi bi-person-circle"></i>
+                <span className="m-2 p-2">My Bookings &nbsp; </span>
+              </button></a>
+ 
+            </div>
+
+             </div> 
           </div>
         </nav>
         <h1 className="title" style={{ fontSize: "2.3rem" }}>
@@ -71,15 +81,7 @@ export default function Resturents() {
               Search
             </button>
           </div>
-          {loading?  <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div> 
-   </div>:details.map((detail) => {
+          {loading?   <Loader/>:details.map((detail) => {
           return (
             <>
               <Restaurent details={detail} />

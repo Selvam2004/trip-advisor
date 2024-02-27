@@ -16,6 +16,9 @@ import Main from "./admin/main";
 import Tours from "./admin/tour";
 import Hotel from "./admin/Hotel";
 import Restaurents from "./admin/Restaurent";
+import RestaurentPayment from "./restaurent/restaurentPayment";
+import Confirmation from "./order/order";
+import Bookings from "./order/bookings";
 
 export default function Routing(){
     return (
@@ -36,9 +39,12 @@ export default function Routing(){
                <Route path="/home/tour/:id" element={<Tour/>}/> 
                <Route path="/home/hotels" element={<Hotels/>}/>
                <Route path="/home/hotels/:id" element={<Details/>}/> 
-               <Route path="/home/hotels/payment/:id" element={<HotelPayment />}/> 
+               <Route path="/home/hotels/payment/:id" element={<HotelPayment/>} /> 
                <Route path="/home/restaurents" element={<Restaurent/>}/>
                <Route path="/home/restaurent/:id" element={<RestaurentDetails/>}/> 
+               <Route path="/home/restaurent/payment/:id" element={<RestaurentPayment/>}/> 
+               <Route path="/home/order/:id" element={<Confirmation/>}/> 
+               <Route path="/home/bookings" element={<Bookings/>}/> 
             </Route>
         </Routes>
         </>

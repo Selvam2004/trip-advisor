@@ -1,6 +1,7 @@
 import { Container, Form, Button, Row, Col, InputGroup } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loader from '../loader';
 export default function Tours(){
 
     const [placename, setPlacename] = useState();
@@ -92,15 +93,7 @@ export default function Tours(){
   if(loading){
     return(
       <>
-      <div className="page" >
-        <div className="cnt">
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="ring"></div>
-            <div className="h">loading</div>
-        </div>
-    </div>
+       <Loader/>
 
       </>
     )

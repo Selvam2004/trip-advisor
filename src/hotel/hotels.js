@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Hotel from "./hotel";
 import { useState ,useEffect} from "react";
 import axios from 'axios';
+import Loader from "../loader";
  
 export default function Hotels() {
   const [details, setDetails] = useState([]);
@@ -52,8 +53,18 @@ export default function Hotels() {
                 gallery
               </a>
             </div>
-            <div className="nav-icons"></div>
+            <div className="nav-icons">
+            <div className="paste-button">
+              <a href="/home/booking"><button className="butt">
+                <i className="bi bi-person-circle"></i>
+                <span className="m-2 p-2">My Bookings &nbsp; </span>
+              </button></a>
+ 
+            </div>
+
+             </div> 
           </div>
+          
         </nav>
         <h1
           className="title"
@@ -76,15 +87,7 @@ export default function Hotels() {
               Search
             </button>
           </div> 
-          {loading?  <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div> 
-   </div>:  details.map((detail,i) => {
+          {loading?  <Loader/>:  details.map((detail,i) => {
           return (
             <>
               <Hotel key={i} details={detail} />

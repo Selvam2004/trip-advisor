@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import Loader from "../loader";
 export default function Hotel() {
   const [title, setTitle] = useState();
   const [img, setImg] = useState();
@@ -12,6 +13,7 @@ export default function Hotel() {
   const [discount, setDiscount] = useState();
   const [imgarr, setImgarr] = useState([]);
   const [avail, setAvail] = useState([]);
+  const [guest, setGuest] = useState(1);
   const [loading, setLoading] = useState(false);
 
   const [amurl, setAmurl] = useState();
@@ -47,6 +49,7 @@ export default function Hotel() {
       price,
       originalprice,
       discount,
+      guest,
       avail,
       imgarr,
     })
@@ -65,15 +68,7 @@ const handleRemove=(e)=>{
 if(loading){
   return(
     <>
-    <div className="page" >
-      <div className="cnt">
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="ring"></div>
-          <div className="h">loading</div>
-      </div>
-  </div>
+     <Loader/>
 
     </>
   )
@@ -176,6 +171,16 @@ else{
                 type="text"
                 placeholder="Enter image URL"
                 onChange={(e) => setImg(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formImage">
+              <Form.Label>Guest Per Room</Form.Label>
+              <Form.Control
+                type="Number"
+                placeholder="Enter no.of Person"
+                min={1}
+                onChange={(e) => setGuest(e.target.value)}
               />
             </Form.Group>
 

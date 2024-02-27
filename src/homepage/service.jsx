@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState } from "react"; 
 export default function Services(){
   const [loading,setLoading]=useState(true);
   const [loading2,setLoading2]=useState(true);
