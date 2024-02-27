@@ -271,3 +271,28 @@
 .paste-button:hover .dropdown-content {
   display: block;
 }
+
+.ldr {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  animation: spin 1s linear infinite;
+  stroke: rgba(107, 114, 128, 1);
+}
+
+.loading-text {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: rgba(107, 114, 128, 1);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
