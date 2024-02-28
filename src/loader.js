@@ -13,7 +13,7 @@ export default function Loader(){
     <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
     <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
   </svg>
-  <span class="loading-text">Loading...</span>
+  <span className="loading-text">Loading...</span>
 </div>
  
        </div>
