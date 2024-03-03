@@ -1,28 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Badge, Card, Col, Row } from "react-bootstrap";
-import {
-  faWifi,
-  faTemperatureArrowDown,
-  faTv,
-  faShower,
-  faIndianRupeeSign,
-} from "@fortawesome/free-solid-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas, faStar } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
-
-
-library.add(
-  fas,
-  faTwitter,
-  faFontAwesome,
-  faStar,
-  faWifi,
-  faTemperatureArrowDown,
-  faTv,
-  faShower,
-  faIndianRupeeSign
-);
+import { faIndianRupeeSign} from "@fortawesome/free-solid-svg-icons";
+ 
 
 export default function Hotel(props) {
   const { details } = props;

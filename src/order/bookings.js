@@ -77,7 +77,19 @@ export default function Bookings(){
         <button className="p-2 pe-3 ps-3 me-2 rounded-4 " style={{backgroundColor:restaurent?"#3fd0d4":"transparent",color:restaurent?"white":"black"}} onClick={e=>setRestaurent(!restaurent)}>   Restaurent </button>
        </div>
        <div style={{minHeight:"20rem"}}>
-        {loading?  <Loader/>:  details.map((detail,i) => {
+        {loading?  <Loader/>:  details.filter(detail=>{
+          const d=new Date();
+          const d2=new Date(detail.bookedDate);
+          if(d.getMonth()<d2.getMonth()){ 
+            return true;
+          }
+          else if(d.getMonth()==d2.getMonth()){
+            return d.getDate()<=d2.getDate();
+          }
+          else{
+            return false;
+          }          
+        }).map((detail,i) => {
           return (
             <>
               <Details key={i} details={detail} />

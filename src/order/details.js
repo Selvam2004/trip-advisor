@@ -16,6 +16,7 @@ library.add(
 );
 export default function Details(props){
     const { details } = props; 
+    const date=new Date(details.bookedDate);
 return (
     <Container>
           <Card className="m-3 mb-4 mt-4">
@@ -46,7 +47,8 @@ return (
                 Amount: <FontAwesomeIcon icon={faIndianRupeeSign} /> {details.price}{" "}
                 &nbsp; &nbsp;&nbsp;&nbsp;  
                 Total Guest :{details.guest} &nbsp; &nbsp;&nbsp;&nbsp;
-                {details.slot?`Slot : ${details.slot}`:`Rooms : ${details.rooms}`}
+                {details.slot?`Slot : ${details.slot}`:`Rooms : ${details.rooms}`} &nbsp; &nbsp;&nbsp;&nbsp;
+                Date:{date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear()}
               </h3>
               <p><b className="fs-5 m-0"> Order Id: </b>{details._id} <br/><b className="fs-5 m-0"> Payment Status: </b> 
                <Badge bg="bsPrefix" style={{ backgroundColor: "blue" }}>

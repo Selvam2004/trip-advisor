@@ -65,7 +65,7 @@ export default function Details(props) {
               <Carousel.Item>
                 <img
                   alt={details.title}
-                  style={{ height: "18rem" }}
+                  style={{ height: "25rem" }}
                   src={source}
                 />
               </Carousel.Item> 
