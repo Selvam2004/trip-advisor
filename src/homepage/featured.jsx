@@ -52,7 +52,7 @@ export default function Featured(){
             </div>
           </article>
           <article className="tour-card">
-            <a href="/home/tour/ooty">
+            <a href="/home/tour/kodaikanal">
               <div className="tour-img-container">
                 <img
                   src= "https://cdn.pixabay.com/photo/2017/09/01/13/07/kodaikanal-2704177_640.jpg"

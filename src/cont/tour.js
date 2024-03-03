@@ -104,7 +104,7 @@ else{
             })}
           </Tab>
           <Tab eventKey="third" title="Gallery">
-            <Galry images={images} />
+            <Galry images={images} title={head[0]} />
           </Tab>
           <Tab eventKey="fourth" title="About">
             <Abt data={about} />
