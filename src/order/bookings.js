@@ -83,7 +83,7 @@ export default function Bookings(){
           if(d.getMonth()<d2.getMonth()){ 
             return true;
           }
-          else if(d.getMonth()==d2.getMonth()){
+          else if(d.getMonth()===d2.getMonth()){
             return d.getDate()<=d2.getDate();
           }
           else{
